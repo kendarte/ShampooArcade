@@ -65,3 +65,66 @@
 @media(max-width:1120px){.broadcast-grid{gap:12px}.broadcast-banner{padding:5px 6px}.broadcast-program{font-size:10px;padding:8px 8px}.broadcast-slashes{width:24px}.broadcast-details{padding:13px}.broadcast-title-line h3{font-size:clamp(23px,2.6vw,32px)}.broadcast-screen .screen-vertical{font-size:10px}}
 @media(max-width:760px){.lineup-section{padding-top:62px;padding-bottom:72px}.lineup-mast{padding:5px 0 17px}.lineup-mast::after{opacity:.25;width:75%}.lineup-heading h2{font-size:clamp(33px,8vw,52px)}.lineup-heading h2 .lineup-slash{padding-right:13px;letter-spacing:-7px}.lineup-subtitle{flex-wrap:wrap;font-size:10px;gap:8px}.lineup-subtitle .jp{font-size:15px}.broadcast-grid{grid-template-columns:1fr;gap:18px}.broadcast-screen{aspect-ratio:1.57}.broadcast-program{font-size:11px}.broadcast-slashes{width:48px}.broadcast-title-line h3{font-size:clamp(28px,7vw,39px)}.broadcast-details p{min-height:auto;font-size:12px}.broadcast-screen .vr-art strong{font-size:50px}}
 @media(prefers-reduced-motion:reduce){.broadcast-card,.broadcast-screen img{transition:none}.broadcast-card:hover,.broadcast-screen:hover img{transform:none}}
+
+
+/* Main homepage: approved S.A.TV PROGRAM LINEUP is the actual landing section */
+.frontpage-lineup .site-head-lineup{border-bottom:1px solid #496071;background:#020e18}
+.frontpage-lineup .site-head-lineup .wrap{width:min(1580px,calc(100% - 60px))}
+.frontpage-lineup .site-head-lineup .head-inner{min-height:111px;gap:22px}
+.frontpage-lineup .brand-full{display:flex;align-items:center;flex-shrink:0}
+.frontpage-lineup .brand-full img{width:clamp(215px,23.5vw,380px);height:auto;object-fit:contain;max-height:110px;border-radius:0}
+.frontpage-lineup .head-right{flex:1;display:flex;flex-direction:column;justify-content:center;min-width:0;gap:17px}
+.frontpage-lineup .head-inner nav{display:flex;align-items:center;justify-content:center;gap:clamp(15px,2vw,37px)}
+.frontpage-lineup .head-inner nav a{font:600 clamp(11px,1.1vw,16px) var(--mono);color:#d1ccd2;letter-spacing:1px;padding:9px 2px;position:relative}
+.frontpage-lineup .head-inner nav a:hover,.frontpage-lineup .head-inner nav a:first-child{color:var(--pink)}
+.frontpage-lineup .head-inner nav a:first-child::after{content:"";position:absolute;bottom:-2px;left:0;right:0;height:3px;background:var(--pink)}
+.frontpage-lineup .head-subline{font:10px var(--mono);color:var(--cyan);text-align:center;letter-spacing:1.5px;white-space:nowrap}
+.frontpage-lineup .head-subline span{color:var(--pink);margin:0 9px}
+.frontpage-lineup .right-nav{align-items:center;gap:9px}
+.frontpage-lineup .satv-button{display:flex;gap:18px;align-items:center;justify-content:center;padding:14px 20px;border:2px solid var(--pink);color:var(--pink);font:700 17px var(--mono);letter-spacing:2px;white-space:nowrap}
+.frontpage-lineup .radio-wave{font-size:17px}
+.frontpage-lineup .satv-button:hover{color:var(--bg);background:var(--pink)}
+.frontpage-lineup .lineup-section.wrap{width:min(1580px,calc(100% - 60px))}
+.frontpage-lineup .lineup-section{padding-top:8px;padding-bottom:27px}
+.frontpage-lineup .lineup-mast{min-height:166px;padding-top:15px;padding-bottom:18px;margin-bottom:17px}
+.frontpage-lineup .lineup-heading{width:100%}
+.frontpage-lineup .lineup-heading h2{font-size:clamp(43px,4.4vw,78px)}
+.frontpage-lineup .lineup-mast::after{height:250px;top:-64px;background-position:center 56%}
+.frontpage-lineup .broadcast-grid{gap:clamp(12px,1.6vw,25px)}
+.frontpage-lineup .broadcast-banner{height:41px}
+.frontpage-lineup .broadcast-details{padding-bottom:14px}
+.frontpage-lineup .broadcast-screen{aspect-ratio:1.53}
+.frontpage-lineup .broadcast-open{font-size:10px}
+.frontpage-lineup .marquee-wrap{position:relative;z-index:1;margin-top:0}
+.frontpage-lineup .home-broadcast{padding-top:83px;padding-bottom:85px;min-height:0}
+.frontpage-lineup .home-broadcast .hero-logo{max-width:500px}
+.frontpage-lineup .home-broadcast:before{display:none}
+@media(min-width:1500px){.frontpage-lineup .broadcast-screen{aspect-ratio:1.56}}
+@media(max-width:1100px){
+ .frontpage-lineup .site-head-lineup .head-inner{min-height:100px;gap:8px}
+ .frontpage-lineup .brand-full img{width:210px}
+ .frontpage-lineup .head-right{gap:5px}
+ .frontpage-lineup .head-inner nav{gap:12px}
+ .frontpage-lineup .head-subline{font-size:8px;letter-spacing:.5px}
+ .frontpage-lineup .satv-button{padding:11px;font-size:13px;gap:5px}
+}
+@media(max-width:760px){
+ .frontpage-lineup .site-head-lineup .wrap,.frontpage-lineup .lineup-section.wrap{width:calc(100% - 28px)}
+ .frontpage-lineup .site-head-lineup .head-inner{min-height:75px;gap:7px}
+ .frontpage-lineup .brand-full img{width:clamp(155px,47vw,255px);max-height:70px}
+ .frontpage-lineup .head-right{display:contents}
+ .frontpage-lineup .head-subline{display:none}
+ .frontpage-lineup .head-inner nav{display:none;left:0;right:0;top:75px;background:#04111c;align-items:stretch;padding:14px;gap:0}
+ .frontpage-lineup .head-inner nav.open{display:flex}
+ .frontpage-lineup .head-inner nav a{font-size:12px;padding:13px}
+ .frontpage-lineup .satv-button{font-size:11px;padding:8px 6px;letter-spacing:0;gap:5px;border-width:1px}
+ .frontpage-lineup .radio-wave{font-size:12px}
+ .frontpage-lineup .lang-btn{padding:8px 6px}
+ .frontpage-lineup .menu-btn{padding:8px}
+ .frontpage-lineup .lineup-section{padding-top:10px;padding-bottom:22px}
+ .frontpage-lineup .lineup-mast{min-height:0;margin-bottom:16px;padding-top:20px}
+ .frontpage-lineup .lineup-heading h2{font-size:clamp(31px,8vw,58px)}
+ .frontpage-lineup .lineup-mast::after{top:-50px;opacity:.35}
+ .frontpage-lineup .home-broadcast{padding-top:58px;padding-bottom:70px}
+}
+@media(max-width:395px){.frontpage-lineup .satv-button{display:none}}
