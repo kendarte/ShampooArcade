@@ -16,6 +16,7 @@ document.getElementById('year').textContent=new Date().getFullYear();
 const mainNavLinks=[...nav.querySelectorAll('a')];
 const trackableSections=[...document.querySelectorAll('#programas,#laboratorio,#estudio,#conecta')];
 let activeNav=mainNavLinks.find(link=>link.classList.contains('nav-active'));
+const selectedNavByTarget=new Map();
 let pendingNav=null;
 let settleTimer;
 function setActiveNav(link){
@@ -35,7 +36,7 @@ function followSection(){
  const section=trackableSections.filter(item=>item.getBoundingClientRect().top<=marker).pop()||trackableSections[0];
  const target='#'+section.id;
  const matches=mainNavLinks.filter(link=>link.getAttribute('href')===target);
- setActiveNav(matches.includes(activeNav)?activeNav:matches.find(link=>link.hasAttribute('data-section-default'))||matches[0]);
+ setActiveNav(matches.includes(activeNav)?activeNav:selectedNavByTarget.get(target)||matches.find(link=>link.hasAttribute('data-section-default'))||matches[0]);
 }
 function finishNavigation(){
  clearTimeout(settleTimer);
@@ -43,6 +44,7 @@ function finishNavigation(){
  followSection();
 }
 mainNavLinks.forEach(link=>link.addEventListener('click',()=>{
+ selectedNavByTarget.set(link.getAttribute('href'),link);
  setActiveNav(link);
  pendingNav=link;
  clearTimeout(settleTimer);
