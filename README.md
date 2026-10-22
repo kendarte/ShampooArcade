@@ -1,5 +1,5 @@
 # Shampoo Arcade
 
-Official static website for S.A. TV — Broadcasting from 199X.
+Official site of Shampoo Arcade — S.A. TV / Broadcasting from 199X.
 
-Site: https://kendarte.github.io/ShampooArcade/
+Live: https://kendarte.github.io/ShampooArcade/
