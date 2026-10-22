@@ -33,7 +33,8 @@ function followSection(){
  if(pendingNav)return;
  // Read all sections, not just the entries changed in the latest observer batch.
  const marker=window.innerHeight*.4;
- const section=trackableSections.filter(item=>item.getBoundingClientRect().top<=marker).pop()||trackableSections[0];
+ const atBottom=window.scrollY+window.innerHeight>=document.documentElement.scrollHeight-2;
+ const section=atBottom?trackableSections[trackableSections.length-1]:trackableSections.filter(item=>item.getBoundingClientRect().top<=marker).pop()||trackableSections[0];
  const target='#'+section.id;
  const matches=mainNavLinks.filter(link=>link.getAttribute('href')===target);
  setActiveNav(matches.includes(activeNav)?activeNav:selectedNavByTarget.get(target)||matches.find(link=>link.hasAttribute('data-section-default'))||matches[0]);
