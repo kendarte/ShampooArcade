@@ -12,6 +12,7 @@
   <link rel="icon" type="image/png" href="assets/favicon.png">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="lineup.css">
+  <link rel="stylesheet" href="motion.css?v=20261022">
   <title>SHAMPOO ARCADE — S.A. TV / Broadcasting from 199X</title>
 </head>
 <body class="frontpage-lineup">
@@ -96,6 +97,33 @@
 
 
 
+    <!-- S.A.TV MOTION IDENT / procedural broadcast graphics, no synthetic gameplay -->
+    <section class="satv-ident wrap" id="satv-ident" aria-labelledby="satv-ident-title">
+      <div class="satv-ident-top"><strong>S.A. TV / STATION IDENT</strong><span class="satv-ident-signal"><i aria-hidden="true"></i> SIGNAL LOCKED · 199X</span></div>
+      <div class="satv-ident-grid">
+        <div class="satv-ident-art" aria-hidden="true">
+          <span class="satv-ident-rings"></span>
+          <img class="satv-ident-avatar" src="assets/02_AVATAR_EXACTO.png" width="170" height="170" alt="">
+          <span class="satv-ident-art-tag">BROADCAST GRAPHICS / NO GAMEPLAY</span>
+        </div>
+        <div class="satv-ident-copy">
+          <p class="kicker" data-satv-channel>CH. 01 / ACTION</p>
+          <h2 id="satv-ident-title"><span data-satv-line1>TAEK-WON-COP</span><br><span data-satv-line2>TURBO</span></h2>
+          <p class="satv-ident-dek" data-satv-dek>Retrofuturist action, tactical combat and anime spectacle.</p>
+          <a class="satv-ident-link" data-satv-link href="https://kendarte.github.io/projects/taek-won-cop/" target="_blank" rel="noopener"><span data-es="EXPLORAR PROGRAMA" data-en="EXPLORE PROGRAM">EXPLORE PROGRAM</span><span aria-hidden="true">↗</span></a>
+        </div>
+        <aside class="satv-ident-panel" aria-label="S.A. TV Channel selector">
+          <span class="satv-ident-panel-title">CH. SELECT / SIGNAL 199X</span>
+          <div class="satv-ident-meter" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <button class="satv-channel" type="button" data-satv-select="0" aria-pressed="true"><b>01</b> ACTION</button>
+          <button class="satv-channel" type="button" data-satv-select="1" aria-pressed="false"><b>02</b> SPORTS</button>
+          <button class="satv-channel" type="button" data-satv-select="2" aria-pressed="false"><b>03</b> VR LAB</button>
+          <div class="satv-ident-controls"><button class="satv-ident-pause" id="satv-motion-toggle" type="button" aria-pressed="false">Ⅱ PAUSE MOTION</button><a class="satv-ident-yt" href="https://www.youtube.com/@ShampooArcade" target="_blank" rel="noopener">YOUTUBE / S.A. TV ↗</a></div>
+        </aside>
+      </div>
+      <div class="satv-ident-bottom"><strong>SHAMPOO ARCADE</strong><span>GAME DEVELOPMENT STUDIO / COSTA RICA</span><span>BROADCASTING FROM 199X //</span></div>
+    </section>
+
     <section class="hero wrap home-broadcast" id="on-air" aria-labelledby="hero-title">
       <div class="hero-copy">
         <div class="eyebrow"><span class="square-chip">01</span><span>GAME DEVELOPMENT STUDIO</span><span class="separator">|</span><span>SIGNAL / 199X</span></div>
@@ -128,5 +156,6 @@
   </main>
   <footer><div class="wrap foot"><div class="foot-main"><img src="assets/02_AVATAR_EXACTO.png" alt="S.A. TV"><div><strong>SHAMPOO ARCADE</strong><small>BROADCASTING FROM 199X</small></div></div><span>© <span id="year">2026</span> SHAMPOO ARCADE. ALL RIGHTS RESERVED.</span><a href="#top">BACK TO TOP ↑</a></div></footer>
   <script src="script.js?v=exclusive-nav-3" defer></script>
+  <script src="motion.js?v=20261022" defer></script>
 </body>
 </html>

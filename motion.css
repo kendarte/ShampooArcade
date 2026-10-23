@@ -1,0 +1,100 @@
+/* S.A. TV / Motion graphics layer — additive; approved artwork remains unchanged. */
+.satv-ident{position:relative;margin-top:36px;margin-bottom:30px;border:1px solid #3bd6f476;background:#04111c;box-shadow:0 11px 0 #020912;isolation:isolate;overflow:hidden}
+.satv-ident:before{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(90deg,#ff4d6d12 0 1px,transparent 1px 64px);opacity:.65;z-index:0}
+.satv-ident-top,.satv-ident-bottom{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:11px 17px;font:700 11px/1.4 var(--mono);letter-spacing:1.3px}
+.satv-ident-top{border-bottom:1px solid #557483;background:#061d29;color:var(--cream)}
+.satv-ident-top strong{font:900 17px var(--display);color:var(--yellow);letter-spacing:1px}
+.satv-ident-signal{display:flex;align-items:center;gap:9px;color:var(--cyan);white-space:nowrap}
+.satv-ident-signal i{width:8px;height:8px;background:var(--pink);box-shadow:0 0 10px var(--pink);border-radius:50%;display:block;animation:satv-pulse 2.4s steps(2,end) infinite}
+.satv-ident-grid{position:relative;z-index:1;display:grid;grid-template-columns:minmax(190px,28%) minmax(260px,1fr) minmax(195px,25%);min-height:295px}
+.satv-ident-art{position:relative;overflow:hidden;display:grid;place-items:center;background:radial-gradient(circle at 50% 42%,#3bd6f43d,transparent 55%),linear-gradient(135deg,#101b30,#05101d);border-right:1px solid #3bd6f465;isolation:isolate}
+.satv-ident-art:before{content:"";position:absolute;inset:0;background:url("assets/04_CIUDAD_ORIGINAL.png") center/cover;opacity:.25;mix-blend-mode:screen}
+.satv-ident-art:after{content:"";position:absolute;left:0;right:0;top:-12%;height:36%;background:linear-gradient(180deg,transparent,rgba(59,214,244,.16),transparent);transform:translateY(-160%);animation:satv-scan 6s linear infinite;pointer-events:none}
+.satv-ident-rings{position:absolute;left:50%;top:46%;width:230px;height:230px;border:1px solid #3bd6f44d;border-radius:50%;transform:translate(-50%,-50%);box-shadow:0 0 0 33px #3bd6f40d,0 0 0 67px #ff4d6d12}
+.satv-ident-rings:before,.satv-ident-rings:after{content:"";position:absolute;inset:-18px;border:1px dashed #ff4d6d90;border-radius:50%;animation:satv-orbit 23s linear infinite}
+.satv-ident-rings:after{inset:-36px;border-color:#f7f34a57;animation-duration:32s;animation-direction:reverse}
+.satv-ident-avatar{position:relative;z-index:1;max-width:46%;max-height:166px;box-shadow:0 15px 25px #0008,0 0 0 3px #f7f34a6a;animation:satv-hover 5s ease-in-out infinite;object-fit:contain;border-radius:6px}
+.satv-ident-art-tag{position:absolute;bottom:13px;left:13px;right:13px;z-index:2;padding:7px;background:#03101cdb;border-left:3px solid var(--pink);font:10px var(--mono);letter-spacing:1px;text-align:center;color:var(--cyan)}
+.satv-ident-copy{position:relative;display:flex;flex-direction:column;justify-content:center;padding:29px clamp(18px,3.8vw,56px);min-width:0;background:linear-gradient(110deg,transparent 60%,#ff4d6d0d)}
+.satv-ident-copy .kicker{margin:0 0 15px;letter-spacing:2px;font-size:11px;color:var(--cyan)}
+.satv-ident-copy h2{font:900 clamp(38px,4vw,69px)/.98 var(--display);margin:0 0 13px;letter-spacing:.7px;text-wrap:balance;text-transform:uppercase;color:var(--cream);text-shadow:3px 3px 0 #091622}
+.satv-ident-copy h2 span{color:var(--pink)}
+.satv-ident-copy h2 [data-satv-line1]{color:var(--cream)}
+.satv-ident-dek{font:13px/1.6 var(--mono);letter-spacing:.2px;color:#b2c6ce;max-width:440px;margin:0 0 15px;min-height:42px}
+.satv-ident-link{display:inline-flex;align-items:center;justify-content:space-between;gap:18px;align-self:flex-start;padding:10px 14px;background:var(--yellow);font:bold 11px var(--mono);letter-spacing:1px;color:#06111e;min-width:168px;transition:background .2s,transform .2s}
+.satv-ident-link:hover{background:var(--cyan);transform:translate(3px,-2px)}
+.satv-ident-panel{position:relative;padding:19px 15px 15px;border-left:1px solid #3bd6f466;background:linear-gradient(130deg,#03111d,#0a2130);display:flex;flex-direction:column;gap:11px}
+.satv-ident-panel-title{color:var(--cream);font:bold 11px var(--mono);letter-spacing:1px}
+.satv-ident-meter{height:42px;display:flex;align-items:flex-end;gap:5px;padding:5px 0 3px;overflow:hidden}
+.satv-ident-meter i{display:block;width:8px;flex:1;min-width:4px;height:var(--bar,40%);background:linear-gradient(to top,var(--pink) 30%,var(--yellow) 70%,var(--cyan));transform-origin:bottom;animation:satv-eq var(--speed,1s) ease-in-out infinite alternate}
+.satv-channel{width:100%;display:flex;align-items:center;gap:11px;text-align:left;cursor:pointer;padding:11px 8px;border:1px solid #355666;background:#051621;color:var(--cream);font:bold 11px var(--mono);letter-spacing:.4px;transition:background .2s,border-color .2s}
+.satv-channel b{color:var(--cyan);font-size:15px;min-width:25px}
+.satv-channel:hover,.satv-channel[aria-pressed="true"]{background:#2b1526;border-color:var(--pink)}
+.satv-channel[aria-pressed="true"] b{color:var(--yellow)}
+.satv-ident-controls{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto}
+.satv-ident-pause{cursor:pointer;color:var(--cyan);background:transparent;border:1px solid #41697a;font:bold 10px var(--mono);padding:8px 10px;letter-spacing:.3px}
+.satv-ident-pause:hover{background:#1b3d4c}
+.satv-ident-yt{display:inline-flex;color:var(--cream);font:bold 10px var(--mono);align-items:center;letter-spacing:.4px;border-bottom:1px solid var(--pink);padding:8px 1px}
+.satv-ident-yt:hover{color:var(--yellow)}
+.satv-ident-bottom{border-top:1px solid #416978;background:var(--yellow);color:#041421;font-size:10px;letter-spacing:1px}
+.satv-ident-bottom strong{font-weight:900}
+.satv-ident-bottom span:last-child{white-space:nowrap}
+.satv-ident-copy.satv-channel-shift{animation:satv-channel-in .45s ease both}
+.satv-screen-sweep{position:absolute;inset:0;z-index:2;pointer-events:none;transform:translateX(-150%) skewX(-20deg);background:linear-gradient(90deg,transparent 34%,rgba(59,214,244,.08) 49%,rgba(244,241,230,.24) 52%,transparent 65%);animation:satv-screen-glint 9s ease-in-out infinite}
+.broadcast-card:nth-child(2) .satv-screen-sweep{animation-delay:-3s}
+.broadcast-card:nth-child(3) .satv-screen-sweep{animation-delay:-6s}
+.broadcast-ticker .ticker-rec:before,.satv-ident-signal i{animation:satv-pulse 2s steps(2,end) infinite}
+.broadcast-screen .bars i{animation:satv-color-drift 6s ease-in-out infinite}
+.broadcast-screen .bars i:nth-child(2){animation-delay:-2s}
+.broadcast-screen .bars i:nth-child(3){animation-delay:-4s}
+.frontpage-lineup .lineup-mast:before{content:"";position:absolute;inset:0 auto 0 -32%;width:22%;z-index:1;pointer-events:none;transform:skewX(-19deg);background:linear-gradient(90deg,transparent,#f7f34a19,transparent);animation:satv-mast-sweep 12s linear infinite}
+.motion-ready .broadcast-card,.motion-ready .lab-card,.motion-ready .transmission-card{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.75,.18,1);transition-delay:var(--motion-delay,0ms)}
+.motion-ready .broadcast-card.motion-in,.motion-ready .lab-card.motion-in,.motion-ready .transmission-card.motion-in{opacity:1;transform:translateY(0)}
+.motion-ready .broadcast-card.motion-in:hover{transform:translateY(-4px)}
+.satv-motion-paused .satv-ident-art:after,.satv-motion-paused .satv-ident-rings:before,.satv-motion-paused .satv-ident-rings:after,.satv-motion-paused .satv-ident-avatar,.satv-motion-paused .satv-ident-meter i,.satv-motion-paused .satv-ident-signal i,.satv-motion-paused .satv-screen-sweep,.satv-motion-paused .broadcast-ticker .ticker-rec:before,.satv-motion-paused .broadcast-screen .bars i,body.satv-motion-paused.frontpage-lineup .lineup-mast:before{animation-play-state:paused}
+@keyframes satv-pulse{0%,55%{opacity:1}56%,100%{opacity:.25}}
+@keyframes satv-orbit{to{transform:rotate(360deg)}}
+@keyframes satv-hover{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes satv-eq{from{transform:scaleY(.34)}to{transform:scaleY(1)}}
+@keyframes satv-scan{0%,12%{transform:translateY(-160%)}82%,100%{transform:translateY(420%)}}
+@keyframes satv-screen-glint{0%,70%,100%{transform:translateX(-150%) skewX(-20deg)}83%{transform:translateX(150%) skewX(-20deg)}}
+@keyframes satv-color-drift{50%{transform:skewY(18deg) translateX(-4px)}}
+@keyframes satv-mast-sweep{0%,70%{left:-32%}100%{left:124%}}
+@keyframes satv-channel-in{from{opacity:.55;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:1040px){
+ .satv-ident-grid{grid-template-columns:210px minmax(210px,1fr) minmax(170px,23%)}
+ .satv-ident-copy{padding:24px}
+ .satv-ident-copy h2{font-size:clamp(33px,4vw,52px)}
+}
+@media(max-width:760px){
+ .satv-ident{margin-top:20px;margin-bottom:25px}
+ .satv-ident-grid{grid-template-columns:minmax(0,1fr) minmax(0,1.6fr)}
+ .satv-ident-art{min-height:250px}
+ .satv-ident-avatar{max-width:62%}
+ .satv-ident-panel{grid-column:1/-1;border-left:0;border-top:1px solid #3bd6f466;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+ .satv-ident-panel-title,.satv-ident-meter,.satv-ident-controls{grid-column:1/-1}
+ .satv-ident-meter{height:32px}
+ .satv-channel{justify-content:center;gap:5px;padding:10px 5px;flex-wrap:wrap}
+ .satv-channel b{min-width:0}
+ .satv-ident-copy{padding:22px 15px}
+ .satv-ident-copy h2{font-size:clamp(29px,6.3vw,49px)}
+ .satv-ident-dek{font-size:11px;min-height:0}
+ .satv-ident-top,.satv-ident-bottom{font-size:9px;padding:9px 10px;letter-spacing:.6px}
+}
+@media(max-width:480px){
+ .satv-ident-grid{grid-template-columns:1fr}
+ .satv-ident-art{min-height:180px}
+ .satv-ident-rings{width:145px;height:145px}
+ .satv-ident-avatar{max-width:95px}
+ .satv-ident-art-tag{right:auto}
+ .satv-ident-copy h2{font-size:clamp(37px,10vw,52px)}
+ .satv-ident-copy{padding:22px}
+ .satv-ident-top strong{font-size:15px}
+ .satv-ident-signal{font-size:9px}
+ .satv-ident-bottom span:nth-child(2){display:none}
+}
+@media(prefers-reduced-motion:reduce){
+ .satv-ident *,.satv-ident:before,.satv-screen-sweep,.frontpage-lineup .lineup-mast:before,
+ .broadcast-ticker .ticker-rec:before,.broadcast-screen .bars i{animation:none!important;transition:none!important}
+ .motion-ready .broadcast-card,.motion-ready .lab-card,.motion-ready .transmission-card{opacity:1;transform:none}
+}
