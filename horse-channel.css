@@ -1,0 +1,22 @@
+/* Horse Racer / S.A.TV Channel 02: authentic race video quadrants, analog channel tuning. */
+.broadcast-screen.horse-collage-screen{background:#071521;isolation:isolate}
+.horse-collage{position:absolute;inset:0;background:#050d16;overflow:hidden}
+.horse-collage-grid{position:absolute;inset:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr));gap:3px;padding:7px;transform:translateZ(0)}
+.horse-collage-tile{min-width:0;min-height:0;position:relative;margin:0;border:1px solid #4f7588;overflow:hidden;background:#0a1820}
+.horse-collage-tile:nth-child(2){border-color:#c66b68}
+.horse-collage-tile:nth-child(3){border-color:#d1c25b}
+.horse-collage-tile:nth-child(4){border-color:#65aec0}
+.broadcast-screen.horse-collage-screen .horse-collage-tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;filter:contrast(1.08) saturate(1.1);transition:none;transform:none}
+.broadcast-screen.horse-collage-screen:hover .horse-collage-tile img{transform:none}
+.horse-collage-tile::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,#02101bb5,transparent 40%,transparent 65%,#02101c91)}
+.horse-collage-tile b{position:absolute;left:6px;top:6px;z-index:2;color:#dff9ff;background:#061728bb;border-left:2px solid #f7f34a;padding:3px 5px;font:700 9px/1.2 var(--mono,'Courier New',monospace);letter-spacing:.5px}
+.horse-collage-live{position:absolute;top:13px;left:14px;z-index:3;background:#071726d6;color:#f7f34a;border:1px solid #f7f34a;padding:4px 7px;font:700 9px/1 var(--mono,'Courier New',monospace);letter-spacing:1px}
+.horse-collage-plate{position:absolute;z-index:2;bottom:12%;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:7px;white-space:nowrap;background:#061726e8;border:1px solid #3bd6f4;box-shadow:3px 3px 0 #ff4d6d;padding:6px 10px 5px;color:#f4f1e6;font:900 clamp(15px,1.8vw,26px)/1 var(--display,Impact,sans-serif);text-shadow:2px 2px #8f325c}
+.horse-collage-plate small{font:700 8px/1.1 var(--mono,'Courier New',monospace);color:#3bd6f4;letter-spacing:.5px;text-shadow:none}
+.horse-collage-static{position:absolute;inset:-12%;z-index:3;opacity:0;pointer-events:none;background:repeating-linear-gradient(0deg,#fff9 0 1px,#03101c 1px 3px,#b4efff70 3px 4px,transparent 4px 7px),repeating-linear-gradient(90deg,#fd476766 0 3px,#41d7fa63 3px 6px,transparent 6px 11px);mix-blend-mode:screen;transform:translateY(-4%)}
+.horse-collage-flash{position:absolute;inset:0;z-index:3;opacity:0;pointer-events:none;background:linear-gradient(180deg,#fff0 0%,#e7fbff 48%,#fff 51%,#fff0 100%);transform:translateY(-120%) scaleY(.45)}
+.horse-collage.is-switching .horse-collage-static{animation:vr-static-switch .54s steps(5,end) both}
+.horse-collage.is-switching .horse-collage-flash{animation:vr-tuning-line .54s linear both}
+.horse-collage.is-switching .horse-collage-grid{animation:vr-tuning-jump .54s steps(4,end) both}
+@media(max-width:740px){.horse-collage-plate{font-size:clamp(14px,4vw,24px)}.horse-collage-plate small{font-size:7px}}
+@media(prefers-reduced-motion:reduce){.horse-collage.is-switching .horse-collage-static,.horse-collage.is-switching .horse-collage-flash,.horse-collage.is-switching .horse-collage-grid{animation:none}}
