@@ -6,8 +6,8 @@
   const panels = [
     {
       line1: "TAEK-WON-COP", line2: "TURBO", channel: "01 / ACTION",
-      en: "Cassette-powered tactical VS combat: command, defend and intercept.",
-      es: "Combate táctico VS con cassettes: elegí comandos, defendé e interceptá.",
+      en: "Jake Turbo, Nikky and the Pink Ninjas collide in a neon arcade world.",
+      es: "Jake Turbo, Nikky y los Pink Ninjas chocan en un mundo arcade de neón.",
       href: "taek-won-cop/index.html"
     },
     {
