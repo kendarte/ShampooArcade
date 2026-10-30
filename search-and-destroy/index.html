@@ -83,6 +83,18 @@
     .sd-video-spec{color:#f7f34a!important;font-weight:700!important;font-size:11px!important}
     @media(max-width:850px){.sd-hero-inner{grid-template-columns:1fr}.sd-hero-art{min-height:250px;max-width:580px}.sd-mechanics{grid-template-columns:repeat(2,minmax(0,1fr))}.sd-video-card{grid-template-columns:1fr}.sd-video-caption{border-left:0;border-top:2px solid #ff4d6d}.sd-title{font-size:clamp(55px,13vw,112px)}}
     @media(max-width:520px){.sd-wrap{width:calc(100% - 30px)}.sd-top .sd-wrap{align-items:flex-start;flex-direction:column;padding:18px 0}.sd-brand img{width:225px}.sd-nav{gap:8px}.sd-nav a,.sd-lang{padding:9px}.sd-hero{padding:49px 0 42px}.sd-hero-art{min-height:220px}.sd-mechanics{grid-template-columns:1fr}.sd-section{padding:55px 0}.sd-section-heading{align-items:start;flex-direction:column}.sd-video-caption{padding:23px}.sd-ticker{text-align:left;padding-left:12px}}
+
+    /* Hero showcases real 1080p corridor footage instead of placeholder artwork */
+    .sd-hero-inner{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);align-items:center}
+    .sd-hero-video{position:relative;isolation:isolate;min-width:0;border:2px solid #ff4d6d;background:#02070a;box-shadow:12px 12px 0 #01070c,12px 12px 0 1px #375366}
+    .sd-hero-video video{display:block;width:100%;aspect-ratio:16/9;object-fit:contain;background:#000}
+    .sd-hero-video .sd-hd-overlay{inset:0 0 34px}
+    .sd-hero-video .sd-hd-overlay strong{font:900 clamp(27px,3vw,43px)/1 Impact,'Arial Black',sans-serif;text-shadow:3px 3px #030912}
+    .sd-hero-video .sd-hd-play{font-size:12px;padding:12px 15px;max-width:94%}
+    .sd-hero-video-tag{font:700 10px/1.4 'Courier New',monospace;letter-spacing:.4px;text-align:center;background:#061622;color:#3bd6f4;padding:10px 5px;min-height:34px}
+    @media(max-width:850px){.sd-hero-inner{grid-template-columns:1fr}.sd-hero-video{max-width:720px}.sd-hero-video .sd-hd-overlay strong{font-size:clamp(26px,6vw,42px)}}
+    @media(max-width:520px){.sd-hero-video .sd-hd-overlay{gap:8px;padding:8px;inset:0 0 34px}.sd-hero-video .sd-hd-overlay strong{font-size:25px}.sd-hero-video .sd-hd-label{font-size:9px}.sd-hero-video .sd-hd-overlay small{font-size:9px}.sd-hero-video .sd-hd-play{font-size:11px;padding:9px}}
+
     @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important}}
   </style>
 </head>
@@ -104,10 +116,15 @@
         <p class="sd-dek" data-en="Step into a supernatural VR shooter inspired by Hellsing. Fight through enemy waves with Casull and Jackal, unleash Alucard's powers, and move from room to room in a gothic combat playground." data-es="Entrá en un shooter sobrenatural de realidad virtual inspirado en Hellsing. Enfrentá oleadas con Casull y Jackal, desatá los poderes de Alucard y avanzá de una habitación a otra en escenarios góticos de combate.">Step into a supernatural VR shooter inspired by Hellsing. Fight through enemy waves with Casull and Jackal, unleash Alucard's powers, and move from room to room in a gothic combat playground.</p>
         <div class="sd-tags"><span>VR ACTION</span><span>DUAL PISTOLS</span><span>WAVE SURVIVAL</span><span>PROTOTYPE</span></div>
       </div>
-      <div class="sd-hero-art" role="img" aria-label="S.A. TV branded skyline artwork, not gameplay">
-        <small>PROJECT SIGNAL / H-VR-001</small>
-        <strong>THE<br>HUNT<br>IS ON.</strong>
-        <b>STUDIO ARTWORK / NOT GAMEPLAY</b>
+      <div class="sd-hero-video" aria-label="Featured Search and Destroy VR corridor gameplay">
+        <video id="sd-corridor-video" controls playsinline preload="none" poster="../videos/hd/corridor-poster.jpg" aria-label="Search and Destroy VR corridor gameplay in original Full HD"></video>
+        <div class="sd-hd-overlay" id="sd-corridor-overlay">
+          <span class="sd-hd-label">S.A. TV / CH. 00 / REAL GAMEPLAY</span>
+          <strong>SEARCH &amp; DESTROY <span>VR</span></strong>
+          <button type="button" id="sd-corridor-load" class="sd-hd-play" data-en="▶ WATCH FULL HD GAMEPLAY" data-es="▶ VER GAMEPLAY EN FULL HD">▶ WATCH FULL HD GAMEPLAY</button>
+          <small id="sd-corridor-status" aria-live="polite" data-en="CORRIDOR / 1920 × 1080 / 30 FPS / STABILIZED" data-es="CORREDOR / 1920 × 1080 / 30 FPS / ESTABILIZADO">CORRIDOR / 1920 × 1080 / 30 FPS / STABILIZED</small>
+        </div>
+        <div class="sd-hero-video-tag">REAL GAMEPLAY / UNOFFICIAL VR PROTOTYPE</div>
       </div>
     </div></section>
     <section class="sd-section sd-wrap" id="gameplay">
@@ -149,6 +166,7 @@
   </main>
   <p class="sd-legal sd-wrap" data-en="Unofficial fan-made development prototype. Hellsing and related characters belong to their respective rights holders. This page does not claim official affiliation or commercial availability." data-es="Prototipo de desarrollo hecho por fans, no oficial. Hellsing y sus personajes pertenecen a sus respectivos titulares. Esta página no afirma afiliación oficial ni disponibilidad comercial.">Unofficial fan-made development prototype. Hellsing and related characters belong to their respective rights holders. This page does not claim official affiliation or commercial availability.</p>
   <script src="hd-video.js" defer></script>
+  <script src="corridor-video.js" defer></script>
   <script>
     (()=>{const button=document.getElementById('sd-lang');let lang='en';button.addEventListener('click',()=>{lang=lang==='en'?'es':'en';document.documentElement.lang=lang;document.querySelectorAll('[data-en][data-es]').forEach(el=>{const value=el.getAttribute('data-'+lang);if(value.includes('<em>'))el.innerHTML=value;else el.textContent=value;});button.textContent=lang==='en'?'ES':'EN';button.setAttribute('aria-label',lang==='en'?'Cambiar a español':'Switch to English');});})();
   </script>
