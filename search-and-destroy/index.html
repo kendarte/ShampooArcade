@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#06111e">
+  <meta name="description" content="Search & Destroy: an experimental Hellsing-inspired VR action prototype. Watch real gameplay and explore its combat systems, weapons, powers and survival mechanics.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Search & Destroy VR | Shampoo Arcade">
+  <meta property="og:description" content="Dual pistols, supernatural powers, blood-fueled combat and room-to-room VR survival. Real gameplay from an in-development prototype.">
+  <link rel="icon" href="../assets/favicon.png" type="image/png">
+  <link rel="stylesheet" href="../style.css">
+  <title>SEARCH & DESTROY VR — SHAMPOO ARCADE / S.A. TV</title>
+  <style>
+    :root{color-scheme:dark}
+    body{background:#020b15;color:#f4f1e6;font-family:Arial,Helvetica,sans-serif}
+    .sd-wrap{width:min(1210px,calc(100% - 46px));margin-inline:auto}
+    .sd-top{border-bottom:1px solid #375366;background:#04111d;position:relative;z-index:5}
+    .sd-top .sd-wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:88px}
+    .sd-brand img{width:clamp(170px,24vw,275px);height:auto;display:block;object-fit:contain}
+    .sd-nav{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+    .sd-nav a,.sd-lang{font:700 11px/1.3 'Courier New',monospace;letter-spacing:1px;padding:10px 12px;border:1px solid #3a5f70;background:#091b28;color:#e4eff4}
+    .sd-nav a:hover,.sd-lang:hover{border-color:#ff4d6d;color:#ff4d6d}
+    .sd-lang{cursor:pointer}
+    .sd-ticker{overflow:hidden;white-space:nowrap;background:#f7f34a;color:#09131c;border-bottom:5px solid #ff4d6d;padding:10px 0;font:900 13px/1.3 'Courier New',monospace;letter-spacing:2px;text-align:center}
+    .sd-ticker span{color:#c12b54;padding:0 13px}
+    .sd-hero{position:relative;padding:76px 0 72px;overflow:hidden;border-bottom:1px solid #28495c;background:radial-gradient(ellipse at 90% 35%,#48203565,transparent 50%),radial-gradient(ellipse at 20% 70%,#103a4255,transparent 50%),#06131f}
+    .sd-hero::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0 5px,#c3f4ff06 5px 6px);pointer-events:none}
+    .sd-hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(250px,.7fr);gap:42px;align-items:center}
+    .sd-kicker{margin:0 0 16px;font:700 12px/1.5 'Courier New',monospace;letter-spacing:2px;color:#3bd6f4}
+    .sd-title{font:900 clamp(56px,10vw,135px)/.83 Impact,'Arial Black',sans-serif;letter-spacing:1px;margin:0 0 26px;text-transform:uppercase;text-shadow:7px 7px #020812}
+    .sd-title span{display:block;color:#ff4d6d}
+    .sd-dek{font:16px/1.7 'Courier New',monospace;color:#d6e1e9;max-width:700px;margin:0 0 25px}
+    .sd-tags{display:flex;gap:8px;flex-wrap:wrap}
+    .sd-tags span{border:1px solid #567282;background:#061c28;padding:8px 10px;color:#f7f34a;font:700 11px 'Courier New',monospace;letter-spacing:1px}
+    .sd-hero-art{border:2px solid #ff4d6d;min-height:335px;position:relative;display:flex;flex-direction:column;justify-content:space-between;padding:20px;background:linear-gradient(180deg,#07132422,#02080ae8),url("../assets/04_CIUDAD_ORIGINAL.png") center/cover;box-shadow:15px 15px 0 #01070c,15px 15px 0 1px #375366}
+    .sd-hero-art:after{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,transparent 0 3px,#0003 3px 5px)}
+    .sd-hero-art strong{font:900 clamp(54px,6vw,85px)/.84 Impact,'Arial Black',sans-serif;color:#f4f1e6;text-shadow:4px 4px #e03563;position:relative;z-index:1}
+    .sd-hero-art small,.sd-hero-art b{position:relative;z-index:1;font:700 11px/1.4 'Courier New',monospace;letter-spacing:1px}
+    .sd-hero-art b{color:#f7f34a}
+    .sd-section{padding:82px 0}
+    .sd-section-alt{background:linear-gradient(180deg,#061622,#091a26);border-block:1px solid #2c4858}
+    .sd-section-heading{display:flex;align-items:end;justify-content:space-between;gap:18px;margin-bottom:26px;border-bottom:1px solid #355669;padding-bottom:18px}
+    .sd-section h2{font:900 clamp(34px,5vw,65px)/1 Impact,'Arial Black',sans-serif;letter-spacing:.8px;margin:0;text-transform:uppercase}
+    .sd-section h2 em{font-style:normal;color:#ff4d6d}
+    .sd-index{font:11px 'Courier New',monospace;color:#3bd6f4;letter-spacing:2px}
+    .sd-video-card{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(230px,.7fr);gap:0;border:1px solid #395b70;background:#04121f;overflow:hidden}
+    .sd-video-frame{background:#000;position:relative}
+    .sd-video-frame video{display:block;width:100%;aspect-ratio:16/9;object-fit:contain;background:#000}
+    .sd-video-caption{padding:30px 28px;display:flex;flex-direction:column;justify-content:center;gap:15px;border-left:2px solid #ff4d6d}
+    .sd-video-caption h3{font:900 37px/.96 Impact,'Arial Black',sans-serif;letter-spacing:.7px;margin:0}
+    .sd-video-caption p{color:#aebfcb;font:13px/1.65 'Courier New',monospace;margin:0}
+    .sd-video-caption a{color:#f7f34a;text-decoration:underline;text-underline-offset:4px;font:700 12px 'Courier New',monospace}
+    .sd-meter{padding:13px 17px;background:#071927;border:1px solid #31576b;border-top:0;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font:10px/1.5 'Courier New',monospace;letter-spacing:1px;color:#9cbbc9}
+    .sd-meter strong{color:#3bd6f4}
+    .sd-mechanics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+    .sd-mechanic{position:relative;border:1px solid #365769;background:linear-gradient(145deg,#0f2334,#04121d 65%);padding:23px;min-height:234px;box-shadow:inset 0 3px 0 #ff4d6d}
+    .sd-mechanic:nth-child(3n+2){box-shadow:inset 0 3px 0 #3bd6f4}
+    .sd-mechanic:nth-child(3n){box-shadow:inset 0 3px 0 #f7f34a}
+    .sd-mechanic .num{font:700 12px 'Courier New',monospace;color:#3bd6f4;letter-spacing:2px}
+    .sd-mechanic h3{font:900 30px/1 Impact,'Arial Black',sans-serif;margin:18px 0 10px;letter-spacing:.5px}
+    .sd-mechanic p{font:12px/1.7 'Courier New',monospace;color:#b8c9d3;margin:0 0 20px}
+    .sd-state{font:700 10px 'Courier New',monospace;color:#f7f34a;letter-spacing:1px}
+    .sd-note{border-left:5px solid #ff4d6d;padding:18px 24px;background:#101d29;font:13px/1.75 'Courier New',monospace;color:#cad9e0;margin:28px 0 0}
+    .sd-bottom{border-top:5px solid #ff4d6d;background:#f7f34a;color:#07121c;padding:42px 0}
+    .sd-bottom .sd-wrap{display:flex;align-items:center;justify-content:space-between;gap:30px;flex-wrap:wrap}
+    .sd-bottom strong{font:900 36px Impact,'Arial Black',sans-serif;letter-spacing:1px}
+    .sd-bottom p{font:12px/1.6 'Courier New',monospace;margin:5px 0 0}
+    .sd-bottom a{border:2px solid #08121c;padding:15px 22px;font:900 13px 'Courier New',monospace}
+    .sd-bottom a:hover{background:#07121c;color:#f7f34a}
+    .sd-legal{font:10px/1.6 'Courier New',monospace;color:#869dac;margin:22px auto 44px}
+    @media(max-width:850px){.sd-hero-inner{grid-template-columns:1fr}.sd-hero-art{min-height:250px;max-width:580px}.sd-mechanics{grid-template-columns:repeat(2,minmax(0,1fr))}.sd-video-card{grid-template-columns:1fr}.sd-video-caption{border-left:0;border-top:2px solid #ff4d6d}.sd-title{font-size:clamp(55px,13vw,112px)}}
+    @media(max-width:520px){.sd-wrap{width:calc(100% - 30px)}.sd-top .sd-wrap{align-items:flex-start;flex-direction:column;padding:18px 0}.sd-brand img{width:225px}.sd-nav{gap:8px}.sd-nav a,.sd-lang{padding:9px}.sd-hero{padding:49px 0 42px}.sd-hero-art{min-height:220px}.sd-mechanics{grid-template-columns:1fr}.sd-section{padding:55px 0}.sd-section-heading{align-items:start;flex-direction:column}.sd-video-caption{padding:23px}.sd-ticker{text-align:left;padding-left:12px}}
+    @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important}}
+  </style>
+</head>
+<body>
+  <header class="sd-top"><div class="sd-wrap">
+    <a class="sd-brand" href="../" aria-label="Shampoo Arcade home"><img src="../assets/01_LOGO_EXACTO.png" alt="Shampoo Arcade / S.A. TV"></a>
+    <nav class="sd-nav" aria-label="Site">
+      <a href="../#programas" data-en="GAMES" data-es="JUEGOS">GAMES</a>
+      <a href="../#laboratorio" data-en="VR ARCADE LAB" data-es="LABORATORIO VR">VR ARCADE LAB</a>
+      <button class="sd-lang" id="sd-lang" type="button" aria-label="Cambiar a español">ES</button>
+    </nav>
+  </div></header>
+  <div class="sd-ticker">S.A. TV <span>✳</span> DEVELOPMENT TRANSMISSION <span>✳</span> SEARCH &amp; DESTROY <span>✳</span> VR / ACTION / 199X</div>
+  <main>
+    <section class="sd-hero"><div class="sd-wrap sd-hero-inner">
+      <div>
+        <p class="sd-kicker">S.A. TV / VR ARCADE LAB / EXPERIMENT 001</p>
+        <h1 class="sd-title">SEARCH <span>&amp; DESTROY</span></h1>
+        <p class="sd-dek" data-en="Step into a supernatural VR shooter inspired by Hellsing. Fight through enemy waves with Casull and Jackal, unleash Alucard's powers, and move from room to room in a gothic combat playground." data-es="Entrá en un shooter sobrenatural de realidad virtual inspirado en Hellsing. Enfrentá oleadas con Casull y Jackal, desatá los poderes de Alucard y avanzá de una habitación a otra en escenarios góticos de combate.">Step into a supernatural VR shooter inspired by Hellsing. Fight through enemy waves with Casull and Jackal, unleash Alucard's powers, and move from room to room in a gothic combat playground.</p>
+        <div class="sd-tags"><span>VR ACTION</span><span>DUAL PISTOLS</span><span>WAVE SURVIVAL</span><span>PROTOTYPE</span></div>
+      </div>
+      <div class="sd-hero-art" role="img" aria-label="S.A. TV branded skyline artwork, not gameplay">
+        <small>PROJECT SIGNAL / H-VR-001</small>
+        <strong>THE<br>HUNT<br>IS ON.</strong>
+        <b>STUDIO ARTWORK / NOT GAMEPLAY</b>
+      </div>
+    </div></section>
+    <section class="sd-section sd-wrap" id="gameplay">
+      <div class="sd-section-heading"><div><p class="sd-kicker">S.A. TV / REAL GAMEPLAY</p><h2 data-en="INSIDE THE <em>HUNT</em>" data-es="DENTRO DE LA <em>CACERÍA</em>">INSIDE THE <em>HUNT</em></h2></div><span class="sd-index">FOOTAGE / 001</span></div>
+      <div class="sd-video-card">
+        <div class="sd-video-frame">
+          <video controls playsinline preload="metadata" aria-label="Search and Destroy VR hotel gameplay, stabilized recording">
+            <source src="../videos/hellsing-vr-hotel-lite.mp4" type="video/mp4">
+            <span data-en="Your browser does not support MP4 video." data-es="Tu navegador no admite video MP4.">Your browser does not support MP4 video.</span>
+          </video>
+        </div>
+        <div class="sd-video-caption">
+          <span class="sd-kicker">REC ● / CH. 01</span>
+          <h3 data-en="VICTORIAN HOTEL" data-es="HOTEL VICTORIANO">VICTORIAN HOTEL</h3>
+          <p data-en="Real prototype footage. Room-scale combat, dual pistols and supernatural encounters. The recording has been stabilized and compressed for streaming." data-es="Gameplay real del prototipo: combate en un hotel, dos pistolas y encuentros sobrenaturales. Grabación estabilizada y comprimida para reproducirse en la web.">Real prototype footage. Room-scale combat, dual pistols and supernatural encounters. The recording has been stabilized and compressed for streaming.</p>
+          <a href="../videos/hellsing-vr-hotel-lite.mp4" target="_blank" rel="noopener" data-en="OPEN VIDEO ↗" data-es="ABRIR VIDEO ↗">OPEN VIDEO ↗</a>
+        </div>
+      </div>
+      <div class="sd-meter"><span><strong>VIDEO 001</strong> / 00:26 / GAMEPLAY CAPTURE</span><span>DEVELOPMENT FOOTAGE / WORK IN PROGRESS</span></div>
+      <p class="sd-note" data-en="The footage illustrates the current prototype. Enemy behavior, room transitions, visual effects and several powers are still being developed; this is not a finished or released game." data-es="Las imágenes muestran el prototipo actual. La IA enemiga, la transición entre habitaciones, los efectos y varios poderes siguen en desarrollo; no es un juego terminado ni publicado.">The footage illustrates the current prototype. Enemy behavior, room transitions, visual effects and several powers are still being developed; this is not a finished or released game.</p>
+    </section>
+    <section class="sd-section sd-section-alt" id="mechanics"><div class="sd-wrap">
+      <div class="sd-section-heading"><div><p class="sd-kicker">S.A. TV / SYSTEM BREAKDOWN</p><h2 data-en="THE <em>MECHANICS</em>" data-es="LAS <em>MECÁNICAS</em>">THE <em>MECHANICS</em></h2></div><span class="sd-index">DESIGN / 001–006</span></div>
+      <div class="sd-mechanics">
+        <article class="sd-mechanic"><span class="num">01 / WEAPONS</span><h3 data-en="CASULL &amp; JACKAL" data-es="CASULL Y JACKAL">CASULL &amp; JACKAL</h3><p data-en="Fight with Alucard's iconic pistols, aiming independently in VR. The weapons are designed to materialize in your hands with visual effects." data-es="Combatí con las pistolas de Alucard, apuntando de manera independiente en VR. Las armas están diseñadas para materializarse en las manos con efectos visuales.">Fight with Alucard's iconic pistols, aiming independently in VR. The weapons are designed to materialize in your hands with visual effects.</p><span class="sd-state">CORE COMBAT / PROTOTYPE</span></article>
+        <article class="sd-mechanic"><span class="num">02 / SURVIVAL</span><h3 data-en="ROOM-TO-ROOM WAVES" data-es="OLEADAS ENTRE CUARTOS">ROOM-TO-ROOM WAVES</h3><p data-en="Clear enemy waves inside connected rooms. The intended flow is to unlock the next doorway after surviving an encounter, without relying on teleporting." data-es="Superá oleadas enemigas en habitaciones conectadas. El objetivo es habilitar la siguiente puerta al sobrevivir, sin depender del teletransporte.">Clear enemy waves inside connected rooms. The intended flow is to unlock the next doorway after surviving an encounter, without relying on teleporting.</p><span class="sd-state">ROOM FLOW / IN DEVELOPMENT</span></article>
+        <article class="sd-mechanic"><span class="num">03 / SUMMONING</span><h3>BASKERVILLE</h3><p data-en="Summon a monstrous familiar from Alucard's arm through a hand gesture. Its intended attacks include biting, grabbing and devouring weakened enemies." data-es="Invocá una criatura monstruosa desde el brazo de Alucard mediante un gesto. Sus ataques previstos incluyen morder, sujetar y devorar enemigos debilitados.">Summon a monstrous familiar from Alucard's arm through a hand gesture. Its intended attacks include biting, grabbing and devouring weakened enemies.</p><span class="sd-state">POWER SYSTEM / IN DEVELOPMENT</span></article>
+        <article class="sd-mechanic"><span class="num">04 / AREA POWER</span><h3>CROWNWELL</h3><p data-en="An inverted-cross gesture is planned to unleash a swarm of bats as an area attack. Hand signs are part of the supernatural VR control language." data-es="Un gesto de cruz invertida está previsto para desatar un enjambre de murciélagos como ataque de área. Las señas de las manos forman parte del control sobrenatural en VR.">An inverted-cross gesture is planned to unleash a swarm of bats as an area attack. Hand signs are part of the supernatural VR control language.</p><span class="sd-state">GESTURE POWER / IN DEVELOPMENT</span></article>
+        <article class="sd-mechanic"><span class="num">05 / RESOURCE</span><h3>BLOOD SCORE</h3><p data-en="Blood is designed to work as a combat resource, not just a visual effect. Absorbing pools of blood would replenish power and encourage aggressive, skillful play." data-es="La sangre está diseñada como recurso de combate, no solo como efecto visual. Absorber charcos permitirá recuperar poder y premiará un estilo de juego agresivo y preciso.">Blood is designed to work as a combat resource, not just a visual effect. Absorbing pools of blood would replenish power and encourage aggressive, skillful play.</p><span class="sd-state">SCORING / IN DEVELOPMENT</span></article>
+        <article class="sd-mechanic"><span class="num">06 / WORLD</span><h3 data-en="DESTRUCTIBLE GOTHIC ARENAS" data-es="ESCENARIOS GÓTICOS DESTRUCTIBLES">DESTRUCTIBLE GOTHIC ARENAS</h3><p data-en="Victorian environments, enemy dismemberment, debris and persistent blood effects are part of the intended arcade spectacle. Destruction and AI are still being refined." data-es="Entornos victorianos, desmembramiento enemigo, objetos destruidos y sangre persistente forman parte del espectáculo arcade. La destrucción y la IA siguen ajustándose.">Victorian environments, enemy dismemberment, debris and persistent blood effects are part of the intended arcade spectacle. Destruction and AI are still being refined.</p><span class="sd-state">ENVIRONMENT / IN DEVELOPMENT</span></article>
+      </div>
+    </div></section>
+    <section class="sd-bottom"><div class="sd-wrap"><div><strong>SHAMPOO ARCADE / S.A. TV</strong><p data-en="More gameplay broadcasts and playtest news as development continues." data-es="Más videos de gameplay y noticias sobre pruebas conforme avance el desarrollo.">More gameplay broadcasts and playtest news as development continues.</p></div><a href="../#laboratorio" data-en="BACK TO VR LAB ↗" data-es="VOLVER AL LAB VR ↗">BACK TO VR LAB ↗</a></div></section>
+  </main>
+  <p class="sd-legal sd-wrap" data-en="Unofficial fan-made development prototype. Hellsing and related characters belong to their respective rights holders. This page does not claim official affiliation or commercial availability." data-es="Prototipo de desarrollo hecho por fans, no oficial. Hellsing y sus personajes pertenecen a sus respectivos titulares. Esta página no afirma afiliación oficial ni disponibilidad comercial.">Unofficial fan-made development prototype. Hellsing and related characters belong to their respective rights holders. This page does not claim official affiliation or commercial availability.</p>
+  <script>
+    (()=>{const button=document.getElementById('sd-lang');let lang='en';button.addEventListener('click',()=>{lang=lang==='en'?'es':'en';document.documentElement.lang=lang;document.querySelectorAll('[data-en][data-es]').forEach(el=>{const value=el.getAttribute('data-'+lang);if(value.includes('<em>'))el.innerHTML=value;else el.textContent=value;});button.textContent=lang==='en'?'ES':'EN';button.setAttribute('aria-label',lang==='en'?'Cambiar a español':'Switch to English');});})();
+  </script>
+</body>
+</html>
