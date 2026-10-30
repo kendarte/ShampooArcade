@@ -1,0 +1,19 @@
+/* Taek-Won-Cop Turbo — genuine 2026-10-30 tactical gameplay on S.A.TV channel 01 */
+.turbo-screen{background:#1c0b29;isolation:isolate}
+.turbo-collage{position:absolute;inset:0;overflow:hidden;background:#160b20}
+.turbo-collage-grid{position:absolute;inset:0;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:3px;transform:scale(1.02);background:#ff3d80}
+.turbo-collage-tile{position:relative;margin:0;min-width:0;min-height:0;overflow:hidden;background:#070d1b}
+.broadcast-screen .turbo-collage-tile img{width:100%;height:100%;object-fit:cover;object-position:center;filter:saturate(1.2) contrast(1.07);transition:transform .4s ease}
+.turbo-screen:hover .turbo-collage-tile img{transform:scale(1.08)}
+.turbo-collage-tile b{position:absolute;bottom:4px;left:5px;max-width:95%;padding:4px 5px;font:900 clamp(8px,.7vw,10px)/1.2 Consolas,monospace;letter-spacing:.07em;text-transform:uppercase;background:#061322e8;border-left:3px solid #4ee5ff;color:#f7f3ea;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.turbo-collage-tile:nth-child(2) b{border-color:#f7f257}.turbo-collage-tile:nth-child(3) b{border-color:#ff3d80}
+.turbo-collage-tile:nth-child(4) b{border-color:#4ee5ff}
+.turbo-channel-head{position:absolute;z-index:5;top:9px;left:8px;display:flex;gap:8px;align-items:center;padding:6px 9px;color:#f8f44f;background:#07101de8;border:1px solid #ff3d8090;font:800 clamp(9px,.85vw,12px) Consolas,monospace;letter-spacing:.08em}
+.turbo-channel-head:before{content:"●";color:#ff3d80;animation:turbo-ticker 1.5s step-end infinite}
+.turbo-channel-title{position:absolute;z-index:5;left:8px;bottom:15px;right:8px;display:flex;align-items:baseline;justify-content:space-between;gap:6px;padding:7px 8px 6px;background:linear-gradient(90deg,#050f1ef0,#071725a6);border-left:3px solid #f8f44f;box-shadow:0 0 0 1px #2edcfb80;color:#fff;font:900 clamp(11px,1.3vw,18px)/1 Arial Narrow,Impact,sans-serif;letter-spacing:.02em;text-shadow:2px 2px #000}
+.turbo-channel-title strong{color:#ff3d80;font-style:italic;font-size:1.16em}
+.turbo-channel-ghost{position:absolute;z-index:4;inset:-15%;background:repeating-linear-gradient(0deg,transparent 0 9px,#f83d803c 10px 12px,transparent 13px 19px);pointer-events:none;animation:turbo-scan 9s steps(1,end) infinite;opacity:0}
+@keyframes turbo-scan{0%,21%,23%,58%,60%,100%{opacity:0;transform:translateY(0)}22%{opacity:.55;transform:translateY(8px)}59%{opacity:.4;transform:translateY(-10px)}}
+@keyframes turbo-ticker{50%{opacity:.25}}
+@media(max-width:760px){.turbo-collage-tile b{font-size:10px}.turbo-channel-title{font-size:clamp(14px,4vw,23px)}.turbo-channel-head{font-size:10px}}
+@media(prefers-reduced-motion:reduce){.turbo-channel-head:before,.turbo-channel-ghost{animation:none}.turbo-screen:hover .turbo-collage-tile img{transform:none}}
