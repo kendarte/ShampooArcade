@@ -127,3 +127,6 @@ body.twc-v2{background:#070e1a;color:#f8f4e9}
 .twc-v2 .v2-hero-primary figcaption strong{font-size:clamp(25px,2.9vw,43px);line-height:.92}
 .twc-v2 .v2-floating{width:35%;top:8px;right:-5px}
 @media(max-width:650px){.twc-v2 .v2-hero-primary figcaption{max-width:63%;left:11px;bottom:12px}.twc-v2 .v2-hero-primary figcaption strong{font-size:clamp(18px,5vw,31px)}.twc-v2 .v2-floating{width:39%}}
+
+/* Character close-up frames are native in-game crops, not square card thumbnails. */
+.twc-v2 .v2-character img{aspect-ratio:3/4;object-fit:cover;object-position:center}
