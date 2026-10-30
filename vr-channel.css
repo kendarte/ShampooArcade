@@ -1,0 +1,162 @@
+/* S.A. TV / Channel 03 — real VR footage collage with analog channel switching.
+   Scoped to the existing VR ARCADE LAB lineup card. */
+.broadcast-screen.vr-screen.vr-collage-screen{
+  background:#030b14;
+  isolation:isolate;
+}
+.vr-collage{
+  position:absolute;
+  inset:0;
+  overflow:hidden;
+  background:#020c16;
+}
+.vr-collage-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  grid-template-rows:repeat(2,minmax(0,1fr));
+  position:absolute;
+  inset:0;
+  gap:3px;
+  padding:7px;
+  transform:translateZ(0);
+}
+.vr-collage-tile{
+  position:relative;
+  min-width:0;
+  min-height:0;
+  overflow:hidden;
+  margin:0;
+  border:1px solid #34576a;
+  background:#081522;
+}
+.vr-collage-tile:nth-child(2){border-color:#bc4b71}
+.vr-collage-tile:nth-child(3){border-color:#b3ba61}
+.vr-collage-tile img,
+.broadcast-screen.vr-collage-screen .vr-collage-tile img{
+  display:block;
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  filter:contrast(1.08) saturate(1.06);
+  transform:none;
+  transition:none;
+}
+.broadcast-screen.vr-collage-screen:hover .vr-collage-tile img{transform:none}
+.vr-collage-tile::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:1;
+  pointer-events:none;
+  background:linear-gradient(180deg,transparent 55%,#020b17a8);
+}
+.vr-collage-tile b{
+  position:absolute;
+  left:7px;
+  top:5px;
+  z-index:2;
+  color:#def7ff;
+  background:#02101cbb;
+  border-left:2px solid #3bd6f4;
+  padding:3px 5px;
+  font:700 9px/1.2 var(--mono,'Courier New',monospace);
+  letter-spacing:.7px;
+}
+.vr-collage-nameplate{
+  position:absolute;
+  z-index:2;
+  bottom:14%;
+  left:8%;
+  right:8%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+  gap:5px;
+  pointer-events:none;
+}
+.vr-collage-nameplate strong{
+  padding:7px 15px 5px;
+  background:#06121fe6;
+  border:1px solid #3bd6f4;
+  color:#faf5e8;
+  box-shadow:4px 4px 0 #ff4d6d,0 2px 16px #000c;
+  text-shadow:2px 2px 0 #e83c71;
+  font:900 clamp(17px,2vw,27px)/1 var(--display,Impact,sans-serif);
+  letter-spacing:1.2px;
+}
+.vr-collage-nameplate small{
+  background:#030e1ce9;
+  padding:4px 7px;
+  color:#f7f34a;
+  font:700 9px/1 var(--mono,'Courier New',monospace);
+  letter-spacing:1.2px;
+}
+.vr-collage-signal{
+  position:absolute;
+  z-index:2;
+  top:7px;
+  left:7px;
+  font:700 9px/1.2 var(--mono,'Courier New',monospace);
+  letter-spacing:1px;
+  color:#c3f6ff;
+  background:#06121fe0;
+  padding:5px 7px;
+  border-bottom:1px solid #ff4d6d;
+}
+.vr-collage-static{
+  position:absolute;
+  z-index:3;
+  inset:-12%;
+  opacity:0;
+  pointer-events:none;
+  background:
+    repeating-linear-gradient(0deg,#fff9 0 1px,#03101c 1px 3px,#b4efff70 3px 4px,transparent 4px 7px),
+    repeating-linear-gradient(90deg,#fd476766 0 3px,#41d7fa63 3px 6px,transparent 6px 11px);
+  mix-blend-mode:screen;
+  transform:translateY(-4%);
+}
+.vr-collage-flash{
+  position:absolute;
+  inset:0;
+  z-index:3;
+  opacity:0;
+  pointer-events:none;
+  background:linear-gradient(180deg,#fff0 0%,#e7fbff 48%,#fff 51%,#fff0 100%);
+  transform:translateY(-120%) scaleY(.45);
+}
+.vr-collage.is-switching .vr-collage-static{animation:vr-static-switch .54s steps(5,end) both}
+.vr-collage.is-switching .vr-collage-flash{animation:vr-tuning-line .54s linear both}
+.vr-collage.is-switching .vr-collage-grid{animation:vr-tuning-jump .54s steps(4,end) both}
+@keyframes vr-static-switch{
+  0%,100%{opacity:0;transform:translateY(-4%) translateX(0)}
+  12%{opacity:.65;transform:translateY(3%) translateX(-7px)}
+  29%{opacity:1;transform:translateY(-9%) translateX(8px)}
+  53%{opacity:.88;transform:translateY(7%) translateX(-3px)}
+  78%{opacity:.48;transform:translateY(-3%) translateX(4px)}
+}
+@keyframes vr-tuning-line{
+  0%{opacity:0;transform:translateY(-120%) scaleY(.35)}
+  17%{opacity:.9}
+  53%{opacity:1;transform:translateY(0) scaleY(.16)}
+  81%{opacity:.4}
+  100%{opacity:0;transform:translateY(120%) scaleY(.35)}
+}
+@keyframes vr-tuning-jump{
+  0%,100%{transform:translateX(0);filter:none}
+  20%{transform:translateX(-5px);filter:contrast(1.7) saturate(.4)}
+  37%{transform:translateX(7px);filter:brightness(1.5) hue-rotate(18deg)}
+  63%{transform:translateX(-3px);filter:contrast(1.5)}
+  82%{transform:translateX(2px);filter:none}
+}
+@media(max-width:740px){
+  .vr-collage-nameplate strong{font-size:clamp(20px,5.6vw,29px)}
+}
+@media(prefers-reduced-motion:reduce){
+  .vr-collage.is-switching .vr-collage-static,
+  .vr-collage.is-switching .vr-collage-flash,
+  .vr-collage.is-switching .vr-collage-grid{animation:none}
+}
