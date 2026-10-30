@@ -6,9 +6,9 @@
   const panels = [
     {
       line1: "TAEK-WON-COP", line2: "TURBO", channel: "01 / ACTION",
-      en: "Retrofuturist action, tactical combat and anime spectacle.",
-      es: "Acción retrofuturista, combate táctico y espectáculo estilo anime.",
-      href: "https://kendarte.github.io/projects/taek-won-cop/"
+      en: "Cassette-powered tactical VS combat: command, defend and intercept.",
+      es: "Combate táctico VS con cassettes: elegí comandos, defendé e interceptá.",
+      href: "taek-won-cop/index.html"
     },
     {
       line1: "HORSE", line2: "RACER", channel: "02 / SPORTS",
