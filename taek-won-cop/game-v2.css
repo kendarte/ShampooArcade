@@ -120,3 +120,10 @@ body.twc-v2{background:#070e1a;color:#f8f4e9}
 @media(max-width:650px){.twc-v2 .v2-section{padding:60px 0}.twc-v2 .v2-hero{padding:52px 0 70px}.twc-v2 .v2-hero .title{font-size:clamp(49px,12.4vw,78px)}.twc-v2 .v2-hero .tagline{font-size:26px}.twc-v2 .v2-floating{right:-4px;width:44%}.twc-v2 .v2-visual-label{left:0;top:7px}.twc-v2 .v2-section-heading{display:block}.twc-v2 .v2-section-heading p{margin-top:13px}.twc-v2 .v2-physical-row,.twc-v2 .v2-steps,.twc-v2 .v2-reel{grid-template-columns:1fr}.twc-v2 .v2-cast-grid{grid-template-columns:1fr 1fr;gap:9px}.twc-v2 .v2-character-body{padding:15px 12px}.twc-v2 .v2-character-body h3{font-size:26px}.twc-v2 .v2-mechanic-list{grid-template-columns:1fr}.twc-v2 .v2-media-photos{grid-template-columns:1fr 1fr}.twc-v2 .v2-status-layout{flex-direction:column;align-items:flex-start}.twc-v2 .v2-feature-photo,.twc-v2 .v2-feature-photo img{min-height:260px}.twc-v2 .v2-ari-copy{padding:22px 19px}}
 @media(max-width:390px){.twc-v2 .v2-cast-grid{grid-template-columns:1fr}.twc-v2 .v2-ari-phases{grid-template-columns:1fr}.twc-v2 .v2-hero .title{font-size:46px}}
 @media(prefers-reduced-motion:reduce){.twc-v2 .v2-character img{transition:none}.twc-v2 .v2-character:hover img{transform:none}}
+
+/* QA: keep both fighters visible and make the photographed title readable. */
+.twc-v2 .v2-world-copy h3 span:first-child{color:var(--white)}
+.twc-v2 .v2-hero-primary figcaption{max-width:59%;bottom:19px}
+.twc-v2 .v2-hero-primary figcaption strong{font-size:clamp(25px,2.9vw,43px);line-height:.92}
+.twc-v2 .v2-floating{width:35%;top:8px;right:-5px}
+@media(max-width:650px){.twc-v2 .v2-hero-primary figcaption{max-width:63%;left:11px;bottom:12px}.twc-v2 .v2-hero-primary figcaption strong{font-size:clamp(18px,5vw,31px)}.twc-v2 .v2-floating{width:39%}}
