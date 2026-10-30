@@ -158,3 +158,6 @@
   .frontpage-lineup .head-inner nav a{font-size:16px;padding:14px 10px}
   .frontpage-lineup .head-inner nav a.nav-active::after{left:10px;right:auto;width:80px;bottom:4px}
 }
+/* Search & Destroy VR — linked detail page within the approved lab card. */
+.lab-page-link{display:block;margin-top:17px;padding-top:12px;border-top:1px solid #486273;color:var(--yellow);font:700 11px/1.5 var(--mono);letter-spacing:.5px;text-decoration:none;transition:color .2s}
+.lab-page-link:hover,.lab-page-link:focus-visible{color:var(--cyan);text-decoration:underline;text-underline-offset:4px}
