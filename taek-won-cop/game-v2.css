@@ -185,3 +185,22 @@ body.twc-v2{background:#070e1a;color:#f8f4e9}
 .twc-v2 .v2-bb-footnote b{color:var(--yellow);margin-right:10px}
 @media(max-width:900px){.twc-v2 .v2-bb-heading,.twc-v2 .v2-bb-grid{grid-template-columns:1fr}.twc-v2 .v2-bb-premise{grid-template-columns:1fr 1fr}.twc-v2 .v2-bb-lead{max-width:64ch}}
 @media(max-width:600px){.twc-v2 .v2-bb-heading h2{font-size:clamp(47px,12vw,82px)}.twc-v2 .v2-bb-heading h2 span{font-size:clamp(27px,7vw,42px)}.twc-v2 .v2-bb-premise{grid-template-columns:1fr}.twc-v2 .v2-bb-premise div{padding:13px 14px}.twc-v2 .v2-bb-card-copy{padding:18px}.twc-v2 .v2-bb-video-header{padding:10px 11px;font-size:9px}.twc-v2 .v2-bb-video-header strong{font-size:12px}}
+
+/* CAST PORTRAITS — Xorpho's full-height panel is the reference for all four. */
+.twc-v2 .v2-cast-grid{align-items:stretch}
+.twc-v2 .v2-cast-grid > .v2-character{display:flex;flex-direction:column;align-self:stretch;height:100%}
+.twc-v2 .v2-cast-grid > .v2-character > img{
+  display:block!important;
+  width:100%!important;
+  height:clamp(480px,56.25vw,720px)!important;
+  min-height:clamp(480px,56.25vw,720px)!important;
+  max-height:clamp(480px,56.25vw,720px)!important;
+  aspect-ratio:auto!important;
+  object-fit:cover!important;
+  object-position:center top!important;
+  flex:none;
+}
+.twc-v2 .v2-cast-grid > .v2-character > .v2-character-body{flex:1}
+@media(max-width:1150px){.twc-v2 .v2-cast-grid > .v2-character > img{height:clamp(360px,69vw,660px)!important;min-height:clamp(360px,69vw,660px)!important;max-height:clamp(360px,69vw,660px)!important}}
+@media(max-width:650px){.twc-v2 .v2-cast-grid > .v2-character > img{height:clamp(320px,85vw,510px)!important;min-height:clamp(320px,85vw,510px)!important;max-height:clamp(320px,85vw,510px)!important}}
+@media(max-width:390px){.twc-v2 .v2-cast-grid > .v2-character > img{height:clamp(430px,135vw,600px)!important;min-height:clamp(430px,135vw,600px)!important;max-height:clamp(430px,135vw,600px)!important}}
