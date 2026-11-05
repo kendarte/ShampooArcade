@@ -204,3 +204,17 @@ body.twc-v2{background:#070e1a;color:#f8f4e9}
 @media(max-width:1150px){.twc-v2 .v2-cast-grid > .v2-character > img{height:clamp(360px,69vw,660px)!important;min-height:clamp(360px,69vw,660px)!important;max-height:clamp(360px,69vw,660px)!important}}
 @media(max-width:650px){.twc-v2 .v2-cast-grid > .v2-character > img{height:clamp(320px,85vw,510px)!important;min-height:clamp(320px,85vw,510px)!important;max-height:clamp(320px,85vw,510px)!important}}
 @media(max-width:390px){.twc-v2 .v2-cast-grid > .v2-character > img{height:clamp(430px,135vw,600px)!important;min-height:clamp(430px,135vw,600px)!important;max-height:clamp(430px,135vw,600px)!important}}
+
+/* TAEK-WON-COP / actual in-game menu footage */
+.twc-v2 .v2-ingame-menu{background:radial-gradient(ellipse at 80% 20%,#98215d38,transparent 55%),#090d20;border-top:2px solid #ef4289;border-bottom:1px solid #4e315e}
+.twc-v2 .v2-ingame-layout{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(260px,.85fr);gap:clamp(20px,3vw,50px);align-items:center}
+.twc-v2 .v2-ingame-player{min-width:0;border:1px solid #4d637d;background:#050817;box-shadow:10px 12px 0 #070a17}
+.twc-v2 .v2-ingame-player-bar{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:11px 15px;border-bottom:2px solid #f13f89;color:#a7ddf2;font:800 10px/1.4 var(--mono);letter-spacing:.06em}
+.twc-v2 .v2-ingame-player-bar strong{color:#fff;font:900 15px/1 var(--head)}
+.twc-v2 .v2-ingame-player video{display:block;width:100%;aspect-ratio:16/9;object-fit:contain;background:#070a18}
+.twc-v2 .v2-ingame-copy h3{font:900 clamp(35px,4vw,66px)/.94 var(--head);margin:18px 0;text-transform:uppercase}
+.twc-v2 .v2-ingame-copy h3 em{color:var(--hot);font-style:normal}
+.twc-v2 .v2-ingame-copy>p{font-size:15px;line-height:1.75;color:#cbd8e7}
+.twc-v2 .v2-ingame-copy .v2-ingame-footnote{font:11px/1.65 var(--mono);color:#95adc2;margin-top:22px;border-left:3px solid var(--blue);padding-left:12px}
+@media(max-width:980px){.twc-v2 .v2-ingame-layout{grid-template-columns:1fr}.twc-v2 .v2-ingame-player{max-width:900px}}
+@media(max-width:500px){.twc-v2 .v2-ingame-player-bar{font-size:8px;padding:9px}.twc-v2 .v2-ingame-player-bar strong{font-size:12px}}
