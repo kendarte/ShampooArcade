@@ -53,7 +53,7 @@ body.twc-v2{background:#070e1a;color:#f8f4e9}
 .twc-v2 .v2-physical-row b{display:block;font:900 23px var(--head);text-transform:uppercase;color:var(--yellow);margin-bottom:6px}
 .twc-v2 .v2-physical-row span{font-size:13px;color:#b4c6d5;line-height:1.6}
 .twc-v2 .v2-cast{background:#09101e}
-.twc-v2 .v2-cast-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px}
+.twc-v2 .v2-cast-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px;align-items:start}
 .twc-v2 .v2-character{min-width:0;background:#0c1a2b;border:1px solid #32566b;position:relative;overflow:hidden}
 .twc-v2 .v2-character img{width:100%;aspect-ratio:4/4;object-fit:cover;transition:transform .25s ease;filter:saturate(1.12)}
 .twc-v2 .v2-character:hover img{transform:scale(1.045)}
