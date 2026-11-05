@@ -152,3 +152,32 @@ body.twc-v2{background:#070e1a;color:#f8f4e9}
 .twc-v2 .v2-hamlucha-copy .v2-hamlucha-note{margin-top:20px;color:#a8baca;font:11px/1.65 var(--mono)}
 @media(max-width:980px){.twc-v2 .v2-hamlucha-grid{grid-template-columns:1fr}.twc-v2 .v2-hamlucha-player{max-width:720px}}
 @media(max-width:500px){.twc-v2 .v2-hamlucha-topline,.twc-v2 .v2-hamlucha-bottomline{font-size:9px;letter-spacing:0}.twc-v2 .v2-hamlucha-details div{grid-template-columns:1fr;gap:4px}.twc-v2 .v2-hamlucha-player{box-shadow:6px 7px 0 #060d17}}
+
+/* BLOCKBUSTERS / pop-culture microgames – real captures, 05 November 2026 */
+.twc-v2 .v2-blockbusters{position:relative;isolation:isolate;background:radial-gradient(ellipse at 15% 12%,#ff47852b,transparent 46%),radial-gradient(ellipse at 90% 85%,#19ddf81c,transparent 42%),#100d27;border-block:2px solid #e84083}
+.twc-v2 .v2-blockbusters:before{content:"";pointer-events:none;position:absolute;inset:0;z-index:-1;opacity:.2;background:linear-gradient(transparent 97%,#30d9e633 100%) 0 0/100% 7px}
+.twc-v2 .v2-bb-heading{display:grid;grid-template-columns:1.12fr .88fr;gap:clamp(20px,4vw,70px);align-items:end;margin-bottom:30px}
+.twc-v2 .v2-bb-heading h2{font:900 clamp(56px,7.1vw,112px)/.84 var(--head);letter-spacing:-.055em;margin:15px 0 0;text-transform:uppercase;text-shadow:4px 4px 0 #071a2c}
+.twc-v2 .v2-bb-heading h2 span{display:block;color:var(--yellow);font-size:clamp(30px,4vw,58px);line-height:.98;letter-spacing:-.025em;margin-top:10px}
+.twc-v2 .v2-bb-lead{font:600 clamp(15px,1.45vw,19px)/1.72 Arial,Helvetica,sans-serif;color:#e1e8ee;max-width:46ch}
+.twc-v2 .v2-bb-premise{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:18px 0 24px}
+.twc-v2 .v2-bb-premise div{background:linear-gradient(135deg,#1b1537,#0c2440);border:1px solid #3d687f;border-top:4px solid var(--hot);padding:18px 16px;min-width:0}
+.twc-v2 .v2-bb-premise b{display:block;font:800 10px var(--mono);letter-spacing:.08em;color:#48e7ff;margin-bottom:7px}
+.twc-v2 .v2-bb-premise span{font:900 clamp(15px,1.5vw,22px)/1.12 var(--head);color:var(--white)}
+.twc-v2 .v2-bb-explainer{max-width:1040px;color:#c8d6e4;font-size:15px;line-height:1.77;margin:0 0 30px;padding-left:20px;border-left:4px solid var(--yellow)}
+.twc-v2 .v2-bb-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.twc-v2 .v2-bb-card{min-width:0;background:#081729;border:1px solid #457084;overflow:hidden;box-shadow:0 12px 30px #0005}
+.twc-v2 .v2-bb-card:first-child{border-top:3px solid var(--blue)}
+.twc-v2 .v2-bb-card:last-child{border-top:3px solid var(--hot)}
+.twc-v2 .v2-bb-video-header{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 16px;background:#111d32;color:var(--blue);font:800 10px/1.3 var(--mono);letter-spacing:.04em}
+.twc-v2 .v2-bb-card:last-child .v2-bb-video-header{color:#ff91b7}
+.twc-v2 .v2-bb-video-header strong{font:900 14px var(--head);color:var(--yellow);letter-spacing:.05em;text-align:right}
+.twc-v2 .v2-bb-card video{display:block;width:100%;aspect-ratio:16/9;object-fit:contain;background:#020513}
+.twc-v2 .v2-bb-card-copy{padding:23px 24px 27px;border-top:2px solid #3b5d77}
+.twc-v2 .v2-bb-tag{font:800 10px/1.55 var(--mono);letter-spacing:.055em;color:var(--blue)}
+.twc-v2 .v2-bb-card-copy h3{font:900 clamp(31px,3vw,52px)/1 var(--head);letter-spacing:-.015em;color:var(--white);text-transform:uppercase;margin:9px 0 15px}
+.twc-v2 .v2-bb-card-copy>p:last-child{font-size:14px;line-height:1.76;color:#bacfdd}
+.twc-v2 .v2-bb-footnote{margin-top:20px;color:#9eb7c9;font:11px/1.65 var(--mono)}
+.twc-v2 .v2-bb-footnote b{color:var(--yellow);margin-right:10px}
+@media(max-width:900px){.twc-v2 .v2-bb-heading,.twc-v2 .v2-bb-grid{grid-template-columns:1fr}.twc-v2 .v2-bb-premise{grid-template-columns:1fr 1fr}.twc-v2 .v2-bb-lead{max-width:64ch}}
+@media(max-width:600px){.twc-v2 .v2-bb-heading h2{font-size:clamp(47px,12vw,82px)}.twc-v2 .v2-bb-heading h2 span{font-size:clamp(27px,7vw,42px)}.twc-v2 .v2-bb-premise{grid-template-columns:1fr}.twc-v2 .v2-bb-premise div{padding:13px 14px}.twc-v2 .v2-bb-card-copy{padding:18px}.twc-v2 .v2-bb-video-header{padding:10px 11px;font-size:9px}.twc-v2 .v2-bb-video-header strong{font-size:12px}}
