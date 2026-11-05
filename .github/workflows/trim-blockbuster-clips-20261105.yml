@@ -13,13 +13,16 @@ jobs:
       - uses: actions/checkout@v4
         with:
           persist-credentials: true
-      - name: Install ffmpeg
-        run: sudo apt-get update -qq && sudo apt-get install -y ffmpeg
+      - name: Install bundled FFmpeg executable
+        run: |
+          python -m pip install --disable-pip-version-check imageio-ffmpeg
+          echo "$(python -c 'import imageio_ffmpeg,os;print(os.path.dirname(imageio_ffmpeg.get_ffmpeg_exe()))')" >> "$GITHUB_PATH"
+          python -c 'import imageio_ffmpeg, shutil, os; shutil.copy2(imageio_ffmpeg.get_ffmpeg_exe(), "/tmp/ffmpeg"); os.chmod("/tmp/ffmpeg", 0o755)'
       - name: Trim website media with frame-accurate re-encoding
         run: |
           set -euo pipefail
-          ffmpeg -hide_banner -loglevel error -y -i media/turbo/blockbuster-pong-breaker-20261105.mp4 -ss 4 -c:v libx264 -preset veryfast -crf 23 -pix_fmt yuv420p -c:a aac -b:a 128k -movflags +faststart media/turbo/pong-trimmed.tmp.mp4
-          ffmpeg -hide_banner -loglevel error -y -i media/turbo/blockbuster-product-placement-20261105-web.mp4 -ss 6 -c:v libx264 -preset veryfast -crf 23 -pix_fmt yuv420p -c:a aac -b:a 128k -movflags +faststart media/turbo/product-trimmed.tmp.mp4
+          /tmp/ffmpeg -hide_banner -loglevel error -y -i media/turbo/blockbuster-pong-breaker-20261105.mp4 -ss 4 -c:v libx264 -preset veryfast -crf 23 -pix_fmt yuv420p -c:a aac -b:a 128k -movflags +faststart media/turbo/pong-trimmed.tmp.mp4
+          /tmp/ffmpeg -hide_banner -loglevel error -y -i media/turbo/blockbuster-product-placement-20261105-web.mp4 -ss 6 -c:v libx264 -preset veryfast -crf 23 -pix_fmt yuv420p -c:a aac -b:a 128k -movflags +faststart media/turbo/product-trimmed.tmp.mp4
           mv media/turbo/pong-trimmed.tmp.mp4 media/turbo/blockbuster-pong-breaker-20261105.mp4
           mv media/turbo/product-trimmed.tmp.mp4 media/turbo/blockbuster-product-placement-20261105-web.mp4
           git config user.name 'shampooarcade-web'
