@@ -1,0 +1,27 @@
+name: Trim Blockbuster web clips (one time)
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/trim-blockbuster-clips-20261105.yml
+permissions:
+  contents: write
+jobs:
+  trim:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Trim website media with frame-accurate re-encoding
+        run: |
+          set -euo pipefail
+          ffmpeg -hide_banner -loglevel error -y -i media/turbo/blockbuster-pong-breaker-20261105.mp4 -ss 4 -c:v libx264 -preset veryfast -crf 23 -pix_fmt yuv420p -c:a aac -b:a 128k -movflags +faststart media/turbo/pong-trimmed.tmp.mp4
+          ffmpeg -hide_banner -loglevel error -y -i media/turbo/blockbuster-product-placement-20261105-web.mp4 -ss 6 -c:v libx264 -preset veryfast -crf 23 -pix_fmt yuv420p -c:a aac -b:a 128k -movflags +faststart media/turbo/product-trimmed.tmp.mp4
+          mv media/turbo/pong-trimmed.tmp.mp4 media/turbo/blockbuster-pong-breaker-20261105.mp4
+          mv media/turbo/product-trimmed.tmp.mp4 media/turbo/blockbuster-product-placement-20261105-web.mp4
+          git config user.name 'shampooarcade-web'
+          git config user.email 'actions@users.noreply.github.com'
+          git add media/turbo/blockbuster-pong-breaker-20261105.mp4 media/turbo/blockbuster-product-placement-20261105-web.mp4
+          git commit -m 'Trim Blockbuster web videos (Pong -4s, Product Placement -6s)'
+          git push origin HEAD:main
