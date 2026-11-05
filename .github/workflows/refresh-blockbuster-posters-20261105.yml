@@ -1,0 +1,40 @@
+name: Update Blockbuster video thumbnails after trim
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/refresh-blockbuster-posters-20261105.yml'
+permissions:
+  contents: write
+jobs:
+  posters:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install video frame utility
+        run: |
+          python -m pip install --disable-pip-version-check imageio-ffmpeg
+          python -c 'import imageio_ffmpeg,shutil,os;shutil.copy2(imageio_ffmpeg.get_ffmpeg_exe(),"/tmp/ffmpeg");os.chmod("/tmp/ffmpeg",0o755)'
+      - name: Generate thumbnails from already-trimmed public videos
+        run: |
+          set -euo pipefail
+          /tmp/ffmpeg -hide_banner -loglevel error -y -ss 0.8 -i media/turbo/blockbuster-pong-breaker-20261105.mp4 -frames:v 1 -vf scale=960:-2 media/turbo/blockbuster-pong-breaker-20261105-trimmed.png
+          /tmp/ffmpeg -hide_banner -loglevel error -y -ss 0.8 -i media/turbo/blockbuster-product-placement-20261105-web.mp4 -frames:v 1 -vf scale=960:-2 media/turbo/blockbuster-product-placement-20261105-trimmed.png
+          python - <<'PY'
+          from pathlib import Path
+          p=Path("taek-won-cop/index.html")
+          s=p.read_text(encoding="utf-8")
+          changes=[
+            ("blockbuster-pong-breaker-20261105.webp","blockbuster-pong-breaker-20261105-trimmed.png"),
+            ("blockbuster-product-placement-20261105.webp","blockbuster-product-placement-20261105-trimmed.png"),
+          ]
+          for old,new in changes:
+            if s.count(old)!=1: raise RuntimeError(f"Expected exactly one poster reference: {old}")
+            s=s.replace(old,new)
+          p.write_text(s,encoding="utf-8")
+          PY
+          git config user.name 'shampooarcade-web'
+          git config user.email 'actions@users.noreply.github.com'
+          git add taek-won-cop/index.html media/turbo/*-trimmed.png
+          git commit -m 'Show thumbnail frames from trimmed Blockbuster clips'
+          git push origin HEAD:main
