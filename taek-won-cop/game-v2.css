@@ -458,3 +458,14 @@ body.twc-v2{background:#070e1a;color:#f8f4e9}
 }
 /* Single supplementary reel after the rejected defense clip was removed. */
 .twc-v2 .v2-reel{grid-template-columns:minmax(0,1fr);max-width:780px;margin-inline:auto}
+
+/* FULL HD ORIGINAL CAPTURES — no GIF reconstruction and no stretched cover video. */
+.twc-v2 .v3-cinema{aspect-ratio:16/9;min-height:0}
+.twc-v2 .v3-cinema video#twc-hd-combat{
+  display:block;width:100%;height:100%;
+  aspect-ratio:16/9;
+  object-fit:contain;object-position:center;
+  image-rendering:auto;background:#070c18;
+}
+@media(max-width:650px){.twc-v2 .v3-cinema video#twc-hd-combat{aspect-ratio:16/9;object-fit:contain}}
+

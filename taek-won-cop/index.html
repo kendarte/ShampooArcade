@@ -29,7 +29,7 @@ footer{display:flex;align-items:center;justify-content:space-between;gap:30px;pa
 @keyframes blink{50%{opacity:.25}}@media(max-width:950px){.hero-layout{grid-template-columns:1fr;gap:38px}.hero-info{max-width:760px}.title{font-size:clamp(70px,10.5vw,110px)}.rules{grid-template-columns:repeat(2,1fr)}.ari-grid{gap:25px}}@media(max-width:650px){.clips{grid-template-columns:1fr}.wrap{width:calc(100% - 32px)}.headrow{min-height:77px}.brand img{width:180px}.head-actions a{display:none}.head-actions .lang{display:block;padding:9px 12px}.channel-strip em{display:none}.hero{padding:48px 0 65px}.title{font-size:clamp(48px,13vw,80px)}.hero-buttons .cta{width:100%}.broadcast{box-shadow:8px 9px 0 #10152d}.broadcast-bar,.broadcast-foot{font-size:9px}.section{padding:58px 0}.section-title{display:block}.section-title p:last-child{margin-top:15px}.rules,.gallery,.vs-grid,.ari-grid{grid-template-columns:1fr}.flow{gap:5px}.flow div{padding:14px 5px}.flow b{font-size:16px}.flow small{font-size:9px}.rule{min-height:auto}.status-row{align-items:flex-start;flex-direction:column}.jump-nav a{font-size:9px;padding:13px 12px}footer{flex-direction:column;align-items:flex-start}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 </style>
-<link rel="stylesheet" href="game-v2.css?v=combat-highlights-20261105">
+<link rel="stylesheet" href="game-v2.css?v=original-gameplay-1080p-20261105">
 </head>
 <body class="twc-v2">
 <header class="header"><div class="wrap headrow">
@@ -48,11 +48,11 @@ footer{display:flex;align-items:center;justify-content:space-between;gap:30px;pa
   </div>
   <div class="v3-cinema-shell">
     <div class="v3-cinema">
-      <video autoplay muted loop playsinline controls preload="auto" poster="../media/turbo/twc-combat-highlights-20261105-poster.jpg" aria-label="Taek-Won-Cop Turbo real combat highlights: Turbo strikes, Xorpho attacks, interceptions and knockdowns">
-        <source src="../media/turbo/twc-combat-highlights-20261105.mp4" type="video/mp4">
+      <video id="twc-hd-combat" autoplay muted playsinline controls preload="auto" poster="../media/turbo/twc-original-combat-poster-1080p.jpg" aria-label="Taek-Won-Cop Turbo original 1440p gameplay, edited as three 1080p combat sequences">
+        <source src="../media/turbo/twc-original-turbo-1080p.mp4" type="video/mp4">
       </video>
       <div class="v3-cinema-vignette" aria-hidden="true"></div>
-      <span class="v3-live-indicator" aria-hidden="true"><b>●</b> COMBAT HIGHLIGHTS / ACTUAL UNITY BUILD</span>
+      <span class="v3-live-indicator" aria-hidden="true"><b>●</b> ORIGINAL GAMEPLAY / FULL HD / ACTUAL UNITY BUILD</span>
       <div class="v3-cinema-counter" aria-hidden="true"><span>REC ●</span><b>01 // TAEKWONFLOW</b><span>HITS / POWERS / KNOCKDOWNS</span></div>
     </div>
     <div class="v3-theater-label"><strong>TAEK-WON-COP TURBO</strong><span>ACTION <b>×</b> REACTION <b>×</b> INTERCEPTION</span><em>PLAYABLE FOOTAGE / 2026</em></div>
@@ -275,5 +275,24 @@ footer{display:flex;align-items:center;justify-content:space-between;gap:30px;pa
 <footer class="wrap"><span>© 2026 SHAMPOO ARCADE / S.A. TV</span><span>TAEK-WON-COP TURBO · GAMEPLAY IN DEVELOPMENT</span><a href="../index.html">RETURN TO S.A. TV ↑</a></footer>
 <script>
 (function(){const btn=document.getElementById('lang');let lang='en';btn.addEventListener('click',function(){lang=lang==='en'?'es':'en';document.documentElement.lang=lang;document.querySelectorAll('[data-en][data-es]').forEach(function(el){el.textContent=el.getAttribute('data-'+lang)});btn.textContent=lang==='en'?'ES':'EN';btn.setAttribute('aria-label',lang==='en'?'Cambiar a español':'Switch to English')});})();
+</script>
+<script>
+(function(){
+  const player=document.getElementById('twc-hd-combat');
+  if(!player)return;
+  const scenes=[
+    '../media/turbo/twc-original-turbo-1080p.mp4',
+    '../media/turbo/twc-original-knockdown-1080p.mp4',
+    '../media/turbo/twc-original-xorpho-1080p.mp4'
+  ];
+  let current=0;
+  player.addEventListener('ended',function(){
+    current=(current+1)%scenes.length;
+    player.src=scenes[current];
+    player.load();
+    const resumed=player.play();
+    if(resumed && typeof resumed.catch==='function')resumed.catch(function(){});
+  });
+})();
 </script>
 </body></html>
