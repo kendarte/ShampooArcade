@@ -472,3 +472,10 @@ body.twc-v2{background:#070e1a;color:#f8f4e9}
 
 .v2-cardcade-player{width:100%;max-width:1080px;margin:1.5rem auto 2rem;border:1px solid rgba(255,255,255,.17);background:#0d0d13;overflow:hidden;border-radius:14px}
 .v2-cardcade-player video{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:contain;background:#000}
+
+/* CardCade88 gameplay GIF gallery */
+.v2-cardcade-highlights{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:20px 0 34px}
+.v2-cardcade-highlights figure{margin:0;min-width:0;overflow:hidden;border:1px solid rgba(255,255,255,.18);border-radius:12px;background:#101019}
+.v2-cardcade-highlights img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:contain;background:#000}
+.v2-cardcade-highlights figcaption{padding:12px 14px;font-size:.72rem;letter-spacing:.12em;font-weight:800;color:#efb9e4}
+@media(max-width:700px){.v2-cardcade-highlights{grid-template-columns:1fr;gap:14px}}
