@@ -233,3 +233,24 @@ body.twc-v2{background:#070e1a;color:#f8f4e9}
 .twc-v2 .v2-highlight-wide .v2-highlight figcaption{justify-content:center;border-top:0;border-left:3px solid var(--hot)}
 @media(max-width:780px){.twc-v2 .v2-highlight-grid{grid-template-columns:1fr 1fr;gap:12px}.twc-v2 .v2-highlight-wide .v2-highlight{grid-template-columns:1fr}.twc-v2 .v2-highlight-wide .v2-highlight img{height:auto;min-height:0}.twc-v2 .v2-highlight-wide .v2-highlight figcaption{border-top:3px solid var(--hot);border-left:0}}
 @media(max-width:470px){.twc-v2 .v2-highlight-grid{grid-template-columns:1fr}.twc-v2 .v2-highlight-grid .v2-highlight img{aspect-ratio:16/9}.twc-v2 .v2-highlight figcaption{padding:13px 14px}}
+
+/* CHANNEL NAV / long-page navigation QA - 2026-11-05 */
+.twc-v2 .v2-jump{
+  position:sticky;
+  top:0;
+  z-index:30;
+  box-shadow:0 9px 24px #030817bb;
+  scrollbar-color:#446b85 #081727;
+  scrollbar-width:thin;
+}
+.twc-v2 .v2-jump a:focus-visible{
+  outline:2px solid var(--yellow);
+  outline-offset:-3px;
+}
+.twc-v2 .v2-section,
+.twc-v2 .v2-status{scroll-margin-top:66px}
+@media(max-width:650px){
+  .twc-v2 .v2-jump a{flex:0 0 auto;padding:13px 14px}
+  .twc-v2 .v2-section,
+  .twc-v2 .v2-status{scroll-margin-top:53px}
+}
