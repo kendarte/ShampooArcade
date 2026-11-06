@@ -359,4 +359,65 @@ body.twc-v2{background:#070e1a;color:#f8f4e9}
  .twc-v2 .v2-ingame-player{box-shadow:6px 7px 0 #061322,6px 7px 0 1px var(--blue)}
  .twc-v2 .v2-beyond-cards article{min-height:0;padding:19px}
 }
+/* CINEMA HERO V3 — full-width real gameplay; replaces old two-column card hero. */
+.twc-v2 .v3-hero{position:relative;isolation:isolate;overflow:hidden;padding:48px 0 44px;background:radial-gradient(ellipse at 72% -15%,#74224844,transparent 58%),linear-gradient(160deg,#07101e,#160d29 58%,#080e1d)}
+.twc-v2 .v3-hero:before{content:"対決 / ターボ";position:absolute;z-index:-1;top:30px;right:-3%;font:900 clamp(100px,16vw,275px)/.8 var(--head);color:#ff478508;white-space:nowrap;transform:rotate(-6deg);pointer-events:none}
+.twc-v2 .v3-hero-masthead{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);gap:28px;align-items:end;margin-bottom:28px}
+.twc-v2 .v3-hero-heading h1{font:900 clamp(62px,9.1vw,158px)/.82 var(--head);letter-spacing:-.065em;margin:10px 0 0;white-space:nowrap;text-transform:uppercase;text-shadow:6px 7px 0 #12172b}
+.twc-v2 .v3-hero-heading h1 em{font-style:italic;color:var(--hot);text-shadow:5px 5px 0 #1d1636,8px 8px 0 var(--blue)}
+.twc-v2 .v3-hero-punch{justify-self:end;max-width:23ch;color:var(--yellow);font:900 clamp(22px,2.55vw,42px)/.98 var(--head);text-transform:uppercase;padding-bottom:4px;text-align:right}
+.twc-v2 .v3-cinema-shell{width:min(1640px,calc(100% - 40px));margin:0 auto;position:relative}
+.twc-v2 .v3-cinema{position:relative;min-height:390px;aspect-ratio:2.15/1;overflow:hidden;background:#080d1a;border:4px solid var(--hot);box-shadow:16px 16px 0 #071322,16px 16px 0 2px var(--blue),0 0 50px #fd408027}
+.twc-v2 .v3-cinema video{display:block;width:100%;height:100%;position:absolute;inset:0;object-fit:cover;object-position:center;background:#090d19}
+.twc-v2 .v3-cinema-vignette{pointer-events:none;position:absolute;inset:0;background:linear-gradient(0deg,#040a18b5,transparent 28%),linear-gradient(90deg,#030b19d3,transparent 45%);z-index:1}
+.twc-v2 .v3-live-indicator{position:absolute;top:23px;left:23px;z-index:2;padding:9px 14px;border:1px solid #40dbe9;background:#071424df;color:#e9f9ff;font:900 11px/1.2 var(--mono);letter-spacing:.09em;pointer-events:none}
+.twc-v2 .v3-live-indicator b{color:var(--hot);margin-right:6px;animation:blink 1.25s infinite}
+.twc-v2 .v3-cinema-caption{position:absolute;z-index:2;left:clamp(24px,5vw,82px);bottom:clamp(50px,5vw,90px);pointer-events:none;text-shadow:3px 3px 0 #050a1b}
+.twc-v2 .v3-cinema-caption small{display:block;color:var(--yellow);font:900 clamp(10px,1vw,14px)/1.3 var(--mono);letter-spacing:.15em;margin-bottom:10px}
+.twc-v2 .v3-cinema-caption strong{font:900 clamp(54px,8vw,128px)/.76 var(--head);letter-spacing:-.05em;color:var(--white)}
+.twc-v2 .v3-cinema-caption strong em{font-style:italic;color:var(--hot);text-shadow:5px 5px 0 #041625,8px 8px 0 var(--blue)}
+.twc-v2 .v3-cinema-counter{pointer-events:none;position:absolute;z-index:2;bottom:12px;left:20px;right:20px;display:flex;justify-content:space-between;align-items:center;gap:12px;border-top:1px solid #5ac8d574;padding-top:10px;font:800 11px var(--mono);letter-spacing:.09em;color:#d9eef5}
+.twc-v2 .v3-cinema-counter span:first-child{color:var(--hot)}
+.twc-v2 .v3-cinema-counter b{color:var(--yellow)}
+.twc-v2 .v3-theater-label{display:flex;align-items:center;justify-content:space-between;gap:15px;margin:16px 0 0 16px;padding:14px 20px;background:linear-gradient(90deg,#1b2d48,#111326);border-left:7px solid var(--yellow);border-bottom:1px solid #376a80}
+.twc-v2 .v3-theater-label strong{font:900 clamp(19px,2.5vw,32px)/1 var(--head);color:var(--white);letter-spacing:.01em}
+.twc-v2 .v3-theater-label span{font:800 clamp(9px,1vw,12px)/1.4 var(--mono);letter-spacing:.1em;color:var(--blue)}
+.twc-v2 .v3-theater-label span b{color:var(--hot)}
+.twc-v2 .v3-theater-label em{font:800 10px var(--mono);color:var(--yellow);font-style:normal;white-space:nowrap}
+.twc-v2 .v3-hero-outro{display:flex;align-items:center;justify-content:space-between;gap:30px;padding-top:45px}
+.twc-v2 .v3-hero-copy{max-width:760px}
+.twc-v2 .v3-hero-copy>p{margin-top:9px;color:#d4e0eb;font-size:clamp(15px,1.3vw,19px);line-height:1.65}
+.twc-v2 .v3-hero-controls{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:12px}
+.twc-v2 .v3-hero-controls .cta{min-width:195px}
+@media(max-width:1250px){.twc-v2 .v3-hero-heading h1{font-size:clamp(58px,8.1vw,116px)}.twc-v2 .v3-hero-punch{font-size:clamp(21px,2.6vw,35px)}}
+@media(max-width:980px){
+ .twc-v2 .v3-hero-masthead{grid-template-columns:1fr;gap:14px}
+ .twc-v2 .v3-hero-heading h1{font-size:clamp(50px,9.7vw,95px);white-space:normal}
+ .twc-v2 .v3-hero-punch{justify-self:start;text-align:left;max-width:none;font-size:clamp(22px,3.8vw,32px)}
+ .twc-v2 .v3-cinema{aspect-ratio:16/10;min-height:350px}
+ .twc-v2 .v3-hero-outro{align-items:flex-start;flex-direction:column;gap:24px}
+ .twc-v2 .v3-hero-controls{justify-content:flex-start}
+ .twc-v2 .v3-theater-label{flex-wrap:wrap}
+}
+@media(max-width:650px){
+ .twc-v2 .v3-hero{padding:38px 0}
+ .twc-v2 .v3-hero-masthead{margin-bottom:22px}
+ .twc-v2 .v3-hero-heading h1{font-size:clamp(40px,10.7vw,65px);line-height:.9}
+ .twc-v2 .v3-hero-punch{font-size:clamp(19px,5.8vw,29px)}
+ .twc-v2 .v3-cinema-shell{width:calc(100% - 16px)}
+ .twc-v2 .v3-cinema{aspect-ratio:4/5;min-height:430px;border-width:2px;box-shadow:7px 8px 0 #071322,7px 8px 0 1px var(--blue)}
+ .twc-v2 .v3-cinema video{object-position:53% center}
+ .twc-v2 .v3-cinema-vignette{background:linear-gradient(0deg,#040a18ce,transparent 50%),linear-gradient(90deg,#030b1966,transparent 60%)}
+ .twc-v2 .v3-live-indicator{top:13px;left:12px;font-size:8px;letter-spacing:.03em;padding:7px 8px}
+ .twc-v2 .v3-cinema-caption{left:20px;bottom:65px}
+ .twc-v2 .v3-cinema-caption strong{font-size:clamp(54px,14vw,85px)}
+ .twc-v2 .v3-cinema-counter{font-size:8px;left:12px;right:12px;gap:6px}
+ .twc-v2 .v3-cinema-counter span:last-child{display:none}
+ .twc-v2 .v3-theater-label{margin:10px 0 0 6px;padding:12px;gap:7px}
+ .twc-v2 .v3-theater-label em{display:none}
+ .twc-v2 .v3-hero-outro{padding-top:27px}
+ .twc-v2 .v3-hero-controls{width:100%}
+ .twc-v2 .v3-hero-controls .cta{width:100%}
+}
+@media(prefers-reduced-motion:reduce){.twc-v2 .v3-live-indicator b{animation:none}}
 
