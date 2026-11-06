@@ -442,3 +442,17 @@ body.twc-v2{background:#070e1a;color:#f8f4e9}
  .twc-v2 .v3-hero-heading h1 em{margin-top:6px}
  .twc-v2 .v3-hero-punch{max-width:34ch;font-size:clamp(19px,5.8vw,28px)}
 }
+
+/* CLOSE-COMBAT VIDEO / keep every hit and defense visible without overlays */
+.twc-v2 .v3-cinema{aspect-ratio:16/9;min-height:0}
+.twc-v2 .v3-cinema video{object-fit:contain;object-position:center}
+.twc-v2 .v3-cinema-vignette{background:linear-gradient(0deg,#040a1860,transparent 22%);pointer-events:none}
+.twc-v2 .v3-cinema-caption{display:none!important}
+.twc-v2 .v2-reel{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media(max-width:980px){.twc-v2 .v3-cinema{aspect-ratio:16/9;min-height:0}}
+@media(max-width:650px){
+ .twc-v2 .v3-cinema{aspect-ratio:16/9;min-height:0}
+ .twc-v2 .v3-cinema video{object-fit:contain;object-position:center}
+ .twc-v2 .v2-reel{grid-template-columns:1fr}
+ .twc-v2 .v3-cinema-counter{display:none}
+}
