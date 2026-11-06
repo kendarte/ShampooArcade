@@ -479,3 +479,4 @@ body.twc-v2{background:#070e1a;color:#f8f4e9}
 .v2-cardcade-highlights img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:contain;background:#000}
 .v2-cardcade-highlights figcaption{padding:12px 14px;font-size:.72rem;letter-spacing:.12em;font-weight:800;color:#efb9e4}
 @media(max-width:700px){.v2-cardcade-highlights{grid-template-columns:1fr;gap:14px}}
+.v2-vehicle-highlights{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:20px auto 32px;max-width:1080px}.v2-vehicle-highlights figure{margin:0;overflow:hidden;border-radius:12px;background:#0d0d13;border:1px solid rgba(255,255,255,.18)}.v2-vehicle-highlights img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}.v2-vehicle-highlights figcaption{padding:10px 12px;font-size:.75rem;letter-spacing:.07em;font-weight:700}@media(max-width:780px){.v2-vehicle-highlights{grid-template-columns:1fr}}
