@@ -254,3 +254,76 @@ body.twc-v2{background:#070e1a;color:#f8f4e9}
   .twc-v2 .v2-section,
   .twc-v2 .v2-status{scroll-margin-top:53px}
 }
+
+/* COMBAT BROADCAST HERO — actual Unity footage, not a static promo image. */
+.twc-v2 .v2-hero-grid{grid-template-columns:minmax(0,.80fr) minmax(0,1.20fr)}
+.twc-v2 .v2-hero-visual{isolation:isolate}
+.twc-v2 .v2-hero-video{aspect-ratio:16/10;transform:rotate(-.6deg);border:3px solid var(--hot);box-shadow:18px 20px 0 #061021,18px 20px 0 2px var(--blue),0 0 55px #ed418b27}
+.twc-v2 .v2-hero-video video{display:block;width:100%;height:100%;aspect-ratio:16/10;object-fit:cover;object-position:center;background:#060c19}
+.twc-v2 .v2-hero-video:after{background:linear-gradient(0deg,#040817eb 0%,transparent 40%),repeating-linear-gradient(0deg,transparent 0 5px,#0008 5px 6px);opacity:.66}
+.twc-v2 .v2-hero-video figcaption{pointer-events:none;right:12px;left:24px;bottom:54px;max-width:72%}
+.twc-v2 .v2-hero-video figcaption strong{font-size:clamp(29px,3.6vw,58px);line-height:.9;color:#f9f6ef;text-shadow:4px 4px #061120}
+.twc-v2 .v2-hero-video figcaption small{font-size:10px;color:var(--yellow)}
+.twc-v2 .v2-on-air{pointer-events:none;position:absolute;z-index:4;top:17px;right:18px;display:flex;align-items:center;gap:9px;background:#07101cdd;border:1px solid #47cddd;padding:8px 11px;color:#ecf8fa;font:800 10px var(--mono);letter-spacing:.08em}
+.twc-v2 .v2-on-air i{width:8px;height:8px;border-radius:50%;background:#fa4284;box-shadow:0 0 12px #ff387c;animation:blink 1.25s infinite}
+.twc-v2 .v2-hero-signal{display:flex;align-items:center;gap:12px;min-width:0;margin:20px 10px 0 20px;padding:11px 15px;border-left:5px solid var(--yellow);border-bottom:1px solid #366080;background:linear-gradient(90deg,#18344a,#10182e)}
+.twc-v2 .v2-hero-signal b{font:900 clamp(15px,1.75vw,23px)/1 var(--head);color:var(--yellow);letter-spacing:.03em}
+.twc-v2 .v2-hero-signal span{font:800 9px/1.4 var(--mono);color:var(--blue);letter-spacing:.07em}
+.twc-v2 .v2-hero-signal strong{white-space:nowrap;margin-left:auto;font:800 10px var(--mono);color:var(--hot)}
+/* Combat encounter reads as a cinematic storyboard rather than five equal boxes. */
+.twc-v2 .v2-steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:minmax(260px,auto);gap:13px}
+.twc-v2 .v2-step{position:relative;min-width:0;overflow:hidden;border:1px solid #446982;background:#071524;clip-path:polygon(0 0,calc(100% - 15px) 0,100% 15px,100% 100%,0 100%);transition:border-color .2s ease,transform .2s ease}
+.twc-v2 .v2-step:hover{transform:translateY(-4px);border-color:var(--yellow)}
+.twc-v2 .v2-step:after{display:none!important}
+.twc-v2 .v2-step img{display:block;width:100%;height:47%;min-height:140px;aspect-ratio:auto;object-fit:cover;object-position:center}
+.twc-v2 .v2-step-body{position:relative;z-index:2;padding:17px 18px 22px}
+.twc-v2 .v2-step h3{font-size:clamp(23px,2vw,35px);line-height:.96;margin:8px 0 11px}
+.twc-v2 .v2-step small{display:inline-block;color:#071019;background:var(--yellow);padding:5px 9px;font-size:10px;transform:skew(-7deg)}
+.twc-v2 .v2-step p{font-size:13px;line-height:1.56}
+.twc-v2 .v2-step:nth-child(2),.twc-v2 .v2-step:nth-child(5){border-top:4px solid var(--blue)}
+.twc-v2 .v2-step:nth-child(3),.twc-v2 .v2-step:nth-child(4){border-top:4px solid var(--hot)}
+.twc-v2 .v2-step:first-child{grid-column:span 2;grid-row:span 2;justify-content:flex-end;min-height:540px;border:2px solid var(--hot);clip-path:polygon(0 0,100% 0,100% 95%,95% 100%,0 100%)}
+.twc-v2 .v2-step:first-child img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
+.twc-v2 .v2-step:first-child:before{content:"";position:absolute;z-index:1;inset:20% 0 0;background:linear-gradient(0deg,#030918 0%,#061020de 33%,transparent 100%);pointer-events:none}
+.twc-v2 .v2-step:first-child .v2-step-body{padding:35px 33px 39px}
+.twc-v2 .v2-step:first-child small{font-size:12px;background:var(--hot);color:#fff}
+.twc-v2 .v2-step:first-child h3{font-size:clamp(46px,5vw,76px);max-width:10ch;color:#fff;text-shadow:4px 4px #061020}
+.twc-v2 .v2-step:first-child p{max-width:45ch;font-size:16px;color:#e4edf6}
+/* ARI details become compact tactical dossier strips, not a generic card wall. */
+.twc-v2 .v2-mechanic-list{grid-template-columns:1fr;gap:10px}
+.twc-v2 .v2-mechanic-list article{position:relative;min-width:0;padding:15px 24px 17px 28px;border:1px solid #416680;border-left:6px solid var(--blue);background:linear-gradient(105deg,#162940,#0c1729 72%);clip-path:polygon(0 0,calc(100% - 13px) 0,100% 13px,100% 100%,0 100%);transition:background .2s ease}
+.twc-v2 .v2-mechanic-list article:nth-child(even){border-left-color:var(--hot);background:linear-gradient(105deg,#251934,#0c182a 72%)}
+.twc-v2 .v2-mechanic-list article:hover{background:#1b2f49}
+.twc-v2 .v2-mechanic-list small{color:var(--yellow);letter-spacing:.09em}
+.twc-v2 .v2-mechanic-list h3{font-size:clamp(23px,2vw,31px);margin:4px 0 6px}
+.twc-v2 .v2-mechanic-list p{font-size:13px;line-height:1.5}
+.twc-v2 .v2-ari-phases div{border-top:5px solid var(--hot);box-shadow:5px 6px 0 #07121c;transform:skew(-4deg)}
+.twc-v2 .v2-ari-phases div:nth-child(2){border-top-color:var(--yellow)}
+.twc-v2 .v2-ari-phases div:nth-child(3){border-top-color:var(--blue)}
+.twc-v2 .v2-ari-phases b{font-size:36px}
+@media(max-width:1100px){
+ .twc-v2 .v2-steps{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:auto}
+ .twc-v2 .v2-step:first-child{grid-column:span 2;grid-row:auto;min-height:400px}
+ .twc-v2 .v2-step img{height:auto;aspect-ratio:16/8;min-height:0}
+}
+@media(max-width:900px){
+ .twc-v2 .v2-hero-grid{grid-template-columns:1fr}
+ .twc-v2 .v2-hero-video{max-width:950px}
+ .twc-v2 .v2-hero-video figcaption{bottom:48px}
+}
+@media(max-width:650px){
+ .twc-v2 .v2-hero-video{aspect-ratio:16/11;box-shadow:7px 8px 0 #061021,7px 8px 0 1px var(--blue)}
+ .twc-v2 .v2-hero-video video{aspect-ratio:16/11}
+ .twc-v2 .v2-on-air{top:10px;right:8px;padding:6px 8px;font-size:9px}
+ .twc-v2 .v2-hero-video figcaption{left:10px;bottom:36px;max-width:81%}
+ .twc-v2 .v2-hero-video figcaption strong{font-size:clamp(23px,7vw,38px)}
+ .twc-v2 .v2-hero-signal{flex-wrap:wrap;margin:15px 0 0 0}
+ .twc-v2 .v2-hero-signal span{flex:1}
+ .twc-v2 .v2-steps{grid-template-columns:1fr;gap:14px}
+ .twc-v2 .v2-step:first-child{grid-column:auto;grid-row:auto;min-height:380px}
+ .twc-v2 .v2-step:first-child h3{font-size:clamp(40px,10vw,58px)}
+ .twc-v2 .v2-step:first-child .v2-step-body{padding:25px 20px}
+ .twc-v2 .v2-mechanic-list article{padding:16px 17px 18px 20px}
+}
+@media(prefers-reduced-motion:reduce){.twc-v2 .v2-on-air i{animation:none}}
+
