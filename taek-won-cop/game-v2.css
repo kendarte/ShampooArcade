@@ -327,3 +327,36 @@ body.twc-v2{background:#070e1a;color:#f8f4e9}
 }
 @media(prefers-reduced-motion:reduce){.twc-v2 .v2-on-air i{animation:none}}
 
+/* TACTICAL MAGAZINE / distinct section treatments 2026-11-05 */
+.twc-v2 .v2-physical-row{gap:9px}
+.twc-v2 .v2-physical-row article{position:relative;overflow:hidden;min-width:0;padding:25px 22px 28px;border:1px solid #43718b;border-top:5px solid var(--yellow);background:linear-gradient(140deg,#14314b,#081424);clip-path:polygon(0 0,calc(100% - 17px) 0,100% 17px,100% 100%,0 100%)}
+.twc-v2 .v2-physical-row article:nth-child(2){border-top-color:var(--hot);background:linear-gradient(140deg,#2a1537,#0d192a)}
+.twc-v2 .v2-physical-row article:nth-child(3){border-top-color:var(--blue)}
+.twc-v2 .v2-physical-row article:after{content:"//";position:absolute;right:13px;top:3px;font:900 66px/.9 var(--head);color:#ffffff12;pointer-events:none}
+.twc-v2 .v2-physical-row b{font-size:clamp(26px,2.6vw,39px)}
+.twc-v2 .v2-bb-grid{grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);align-items:stretch;gap:22px}
+.twc-v2 .v2-bb-card{position:relative;box-shadow:12px 12px 0 #080e1e,0 0 25px #f7377214;transition:transform .25s ease,box-shadow .25s ease}
+.twc-v2 .v2-bb-card:hover{transform:translateY(-5px);box-shadow:12px 17px 0 #080e1e,0 0 35px #ff438536}
+.twc-v2 .v2-bb-card:first-child{border-top:6px solid var(--blue)}
+.twc-v2 .v2-bb-card:last-child{border-top:6px solid var(--hot)}
+.twc-v2 .v2-bb-video-header{background:linear-gradient(90deg,#0c3046,#10182d);padding:15px 20px}
+.twc-v2 .v2-bb-card:last-child .v2-bb-video-header{background:linear-gradient(90deg,#4b1740,#10182d)}
+.twc-v2 .v2-bb-card-copy{background:linear-gradient(120deg,#0b2436,#0a1327 72%)}
+.twc-v2 .v2-bb-card:last-child .v2-bb-card-copy{background:linear-gradient(120deg,#21142f,#0a1327 72%)}
+.twc-v2 .v2-beyond-cards article{position:relative;overflow:hidden;min-height:180px;padding:24px 27px;border:1px solid #3d6880;border-left:6px solid var(--blue);background:linear-gradient(110deg,#112943,#0b1526 90%);clip-path:polygon(0 0,calc(100% - 19px) 0,100% 19px,100% 100%,0 100%)}
+.twc-v2 .v2-beyond-cards article:last-child{border-left-color:var(--hot);background:linear-gradient(110deg,#261535,#0b1526 90%)}
+.twc-v2 .v2-beyond-cards article:after{content:"+";position:absolute;top:-18px;right:13px;font:900 112px/1 var(--head);color:#e3f8ff0b;pointer-events:none}
+.twc-v2 .v2-beyond-cards h3{font-size:clamp(29px,2.7vw,40px);color:#fff}
+.twc-v2 .v2-beyond-cards p{max-width:57ch}
+.twc-v2 .v2-ingame-player{border:2px solid var(--hot);box-shadow:12px 13px 0 #061322,12px 13px 0 2px var(--blue)}
+.twc-v2 .v2-media-photos figure{border:1px solid #406984;clip-path:polygon(0 0,100% 0,100% 93%,93% 100%,0 100%)}
+@media(max-width:900px){
+ .twc-v2 .v2-bb-grid{grid-template-columns:1fr}
+}
+@media(max-width:650px){
+ .twc-v2 .v2-physical-row article{padding:20px 19px}
+ .twc-v2 .v2-bb-card{box-shadow:6px 7px 0 #080e1e}
+ .twc-v2 .v2-ingame-player{box-shadow:6px 7px 0 #061322,6px 7px 0 1px var(--blue)}
+ .twc-v2 .v2-beyond-cards article{min-height:0;padding:19px}
+}
+
