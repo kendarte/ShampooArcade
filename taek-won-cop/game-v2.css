@@ -660,3 +660,5 @@ body.twc-v2{background:#070e1a;color:#f8f4e9}
 .twc-v2 .twc-ask-turbo-foot{margin-top:18px;color:#6ebccc;font:800 10px/1.5 var(--mono);letter-spacing:.07em}
 @media(max-width:850px){.twc-v2 .twc-ask-turbo-layout{grid-template-columns:1fr}.twc-v2 .twc-ask-turbo-visual{min-height:0}.twc-v2 .twc-ask-turbo-visual img{height:auto;min-height:0;aspect-ratio:4/3}.twc-v2 .twc-ask-turbo-info{padding-top:20px}}
 @media(max-width:500px){.twc-v2 .twc-ask-turbo-top{font-size:9px;letter-spacing:.08em}.twc-v2 .twc-ask-turbo-visual{box-shadow:6px 7px 0 #050b15}.twc-v2 .twc-ask-turbo-visual figcaption{padding:9px;font-size:9px}.twc-v2 .twc-ask-turbo-info h2{font-size:clamp(56px,17vw,82px)}.twc-v2 .twc-ask-turbo-link{font-size:11px;padding:12px 9px}.twc-v2 .twc-ask-turbo-link small{font-size:9px}}
+
+.twc-v2 .twc-ask-turbo-mail-copy{display:flex;flex-direction:column;gap:4px;min-width:0}.twc-v2 .twc-ask-turbo-mail-copy strong{font:inherit}.twc-v2 .twc-ask-turbo-mail-copy small{font:700 12px/1.4 var(--mono);letter-spacing:0;overflow-wrap:anywhere}
