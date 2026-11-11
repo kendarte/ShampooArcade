@@ -1,0 +1,21 @@
+/* Paddle Panic featured signal — scoped to the S.A. TV VR laboratory. */
+.pp-feature{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);margin:0 0 32px;background:linear-gradient(118deg,#11162f 0%,#172239 55%,#180f2a 100%);border:1px solid #fb4b97;box-shadow:12px 14px 0 #050c18;overflow:hidden;position:relative;isolation:isolate}
+.pp-feature::before{content:"";position:absolute;inset:-150px -170px auto auto;width:430px;height:430px;z-index:-1;background:radial-gradient(circle,#ff2c8340,transparent 69%);pointer-events:none}
+.pp-feature-art{position:relative;display:block;min-height:360px;overflow:hidden;background:#130e24}
+.pp-feature-art img{display:block;width:100%;height:100%;min-height:360px;object-fit:cover;aspect-ratio:3/2;transition:transform .45s ease}
+.pp-feature-art:hover img{transform:scale(1.035)}
+.pp-feature-art::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,transparent 65%,#101629a8)}
+.pp-feature-art-badge{position:absolute;left:17px;top:17px;z-index:2;background:#0a152ce8;border:1px solid #3bd6f4;padding:8px 12px;color:#3bd6f4;font:800 10px/1.2 "Courier New",monospace;letter-spacing:.11em}
+.pp-feature-copy{padding:clamp(28px,4vw,54px);display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:15px}
+.pp-feature-line{color:#31eaff;font:800 11px/1.4 "Courier New",monospace;letter-spacing:.14em}
+.pp-feature h3{color:#fffaf5;font:900 clamp(48px,5vw,78px)/.86 Impact,"Arial Black",sans-serif;letter-spacing:-.035em;margin:5px 0 2px;text-transform:uppercase;text-shadow:4px 4px #0d182b}
+.pp-feature h3 em{display:block;color:#ff3e97;font-style:italic;text-shadow:5px 5px 0 #163b5c}
+.pp-feature p{color:#d5e2ed;font:15px/1.66 Arial,Helvetica,sans-serif;margin:0;max-width:43ch}
+.pp-feature-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.pp-feature-tags span{padding:7px 9px;border:1px solid #3c6179;color:#b8effb;font:800 10px/1.2 "Courier New",monospace;letter-spacing:.06em}
+.pp-feature-button{display:inline-flex;align-items:center;gap:22px;background:#f6ed3f;color:#0b1324;font:900 12px/1.3 "Courier New",monospace;letter-spacing:.05em;padding:15px 20px;margin-top:6px;transition:transform .2s,background .2s}
+.pp-feature-button:hover{background:#fff279;transform:translateY(-3px)}
+.pp-feature-button:focus-visible,.pp-feature-art:focus-visible{outline:3px solid #3bd6f4;outline-offset:3px}
+@media(max-width:900px){.pp-feature{grid-template-columns:1fr}.pp-feature-art{min-height:0}.pp-feature-art img{height:auto;min-height:0}.pp-feature-art::after{background:linear-gradient(0deg,#10162985,transparent 35%)}.pp-feature-copy{padding:29px}}
+@media(max-width:460px){.pp-feature h3{font-size:54px}.pp-feature{box-shadow:6px 7px 0 #050c18}}
+@media(prefers-reduced-motion:reduce){.pp-feature-art img,.pp-feature-button{transition:none}}
