@@ -1,0 +1,24 @@
+/* Padel Panic actual Quest gameplay showcase. Scoped to the game page. */
+.pp-showcase{padding:74px 0 82px;border-block:1px solid #693d74;background:radial-gradient(ellipse at 15% 16%,#4b174b75,transparent 45%),linear-gradient(160deg,#091728,#0c122c 58%,#1a102f);scroll-margin-top:24px}
+.pp-showcase-heading{display:flex;gap:25px;align-items:flex-end;justify-content:space-between;margin:0 0 27px}
+.pp-showcase-heading h2{font:900 clamp(40px,5.5vw,72px)/.94 var(--display);letter-spacing:-.03em;margin:7px 0 15px;color:#fff}
+.pp-showcase-intro{font-size:15px;line-height:1.7;color:#c6d6e5;max-width:74ch;margin:0}
+.pp-showcase-tag{white-space:nowrap;color:var(--yellow);font:800 11px var(--mono);letter-spacing:.08em;border:1px solid #53647b;padding:12px 14px;background:#0c1c2e}
+.pp-video-frame{border:2px solid var(--hot);background:#040911;box-shadow:10px 12px 0 #111f39,0 0 30px #ff268f20}
+.pp-video-top,.pp-video-bottom{min-height:38px;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:10px 14px;font:800 11px/1.5 var(--mono);letter-spacing:.06em}
+.pp-video-top{background:#0c1b35;color:var(--cyan);border-bottom:1px solid #704574}
+.pp-video-top span+span{color:var(--yellow)}
+.pp-video-bottom{color:#94b7c9;border-top:1px solid #704574}
+.pp-video-bottom a{color:var(--yellow);text-decoration:underline;text-underline-offset:3px}
+.pp-video-frame video{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:contain;background:#050b14}
+.pp-gallery-heading{display:flex;gap:16px;justify-content:space-between;align-items:end;margin:42px 0 18px}
+.pp-gallery-heading h3{color:#fff;font:900 clamp(25px,3vw,40px)/1 var(--display);margin:0}
+.pp-gallery-heading p{color:#a8bfce;font:12px/1.5 var(--mono);max-width:45ch;margin:0}
+.pp-shot-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}
+.pp-shot{display:block;min-width:0;overflow:hidden;border:1px solid #3d6378;background:#0c1830;transition:border-color .2s,transform .2s}
+.pp-shot:hover,.pp-shot:focus-visible{border-color:var(--hot);transform:translateY(-3px)}
+.pp-shot img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;display:block}
+.pp-shot-caption{display:block;padding:10px 13px;border-top:1px solid #314f6a;color:var(--cyan);font:800 11px/1.35 var(--mono);letter-spacing:.07em}
+@media(max-width:800px){.pp-showcase-heading,.pp-gallery-heading{display:block}.pp-showcase-tag{display:inline-block;margin-top:18px}.pp-gallery-heading p{margin-top:8px}}
+@media(max-width:650px){.pp-showcase{padding:58px 0}.pp-shot-grid{grid-template-columns:1fr}.pp-video-top,.pp-video-bottom{font-size:9px}.pp-video-top span+span{display:none}.pp-showcase-heading h2{font-size:clamp(38px,11vw,54px)}}
+@media(prefers-reduced-motion:reduce){.pp-shot{transition:none}.pp-shot:hover{transform:none}}
