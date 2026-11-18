@@ -1,0 +1,24 @@
+/* Padel Panic official publisher pitch section - 2026-11-18 */
+.pp-publisher-section{padding:64px 0 74px;background:linear-gradient(165deg,#0a1a2b 0%,#090d1b 58%,#1e0920 100%);border-block:1px solid #26475c}
+.pp-publisher-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,390px);align-items:center;gap:26px;margin-bottom:25px}
+.pp-publisher-kicker{font-size:12px;font-weight:900;letter-spacing:.16em;color:#4ae5eb;margin:0 0 12px}
+.pp-publisher-title{font-family:Impact,"Arial Black",sans-serif;color:#fff;font-size:clamp(34px,5vw,63px);letter-spacing:.01em;line-height:.98;margin:0}
+.pp-publisher-title em{font-style:normal;color:#ff449a}
+.pp-publisher-lead{color:#c4d3dc;font-size:clamp(14px,1.45vw,18px);line-height:1.56;max-width:740px;margin:17px 0 0}
+.pp-publisher-links{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
+.pp-publisher-links a{display:inline-flex;align-items:center;justify-content:center;text-align:center;text-decoration:none;font-weight:900;font-size:12px;letter-spacing:.045em;min-height:46px;padding:12px 18px;border-radius:5px;transition:transform .15s ease,background .15s ease}
+.pp-publisher-links a:hover,.pp-publisher-links a:focus-visible{transform:translateY(-2px)}
+.pp-publisher-primary{background:#ff449a;color:#071322}
+.pp-publisher-primary:hover{background:#ff76b7}
+.pp-publisher-secondary{border:1px solid #4ae5eb;color:#4ae5eb;background:#091b2c}
+.pp-publisher-secondary:hover{background:#17364a}
+.pp-publisher-facts{border-left:3px solid #ff449a;padding:18px 20px;background:#12273b;color:#e9f4fa}
+.pp-publisher-facts strong{font-size:13px;color:#ffe268;text-transform:uppercase;letter-spacing:.08em}
+.pp-publisher-facts p{margin:10px 0 0;font-size:14px;line-height:1.55;color:#d0deeb}
+.pp-publisher-preview{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.pp-publisher-preview a{display:block;min-width:0;overflow:hidden;border:1px solid #30536b;border-radius:6px;background:#0c2032;box-shadow:0 12px 35px #0004;text-decoration:none}
+.pp-publisher-preview a:hover,.pp-publisher-preview a:focus-visible{border-color:#ff449a}
+.pp-publisher-preview img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:contain}
+.pp-publisher-preview span{display:block;font-size:12px;letter-spacing:.08em;padding:11px 14px;font-weight:900;color:#4ae5eb}
+.pp-publisher-caption{font-size:12px;color:#9fbacb;margin-top:15px}
+@media(max-width:790px){.pp-publisher-section{padding:40px 0}.pp-publisher-layout{grid-template-columns:1fr}.pp-publisher-preview{grid-template-columns:1fr}.pp-publisher-links a{flex:1 1 200px}}
